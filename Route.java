@@ -19,4 +19,56 @@ public class Route {
         this.distance = distance;
 
     }
+
+    @Override
+    public String toString() {
+        return "Route(" +
+                "id = " + id +
+                ", name = " + name  +
+                ", coordinates = " + coordinates +
+                ", creationDate = " + creationDate +
+                ", from = " + from +
+                ", to = " + to +
+                ", distance = " + distance +
+                ')';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Float getDistance() {
+        return distance;
+    }
+
+    public void setFrom(Location from) {
+        this.from = from;
+    }
+
+    public void setTo(Location to) {
+        this.to = to;
+    }
+
+    public void setDistance(Float distance) {
+        this.distance = distance;
+    }
+
+
+
 }
