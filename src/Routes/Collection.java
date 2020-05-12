@@ -26,12 +26,20 @@ public class Collection {
     }
 
 
-    public static Route searchById(Long id) {
+    public Route searchById(long id) {
         for (Route r : Routes) {
             if (r.getId().equals(id))
                 return r;
         }
         return null;
+    }
+
+    public long generateUniqueID() {
+        long id;
+        do {
+            id = IDGenerator.generateNewID();
+        } while (this.searchById(id) != null);
+        return id;
     }
 
 }
