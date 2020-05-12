@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 public class Collection {
 
-    private static ArrayList<Route> Routes;
+    public static ArrayList<Route> Routes;
 
     private LocalDate initializationDate;
 
