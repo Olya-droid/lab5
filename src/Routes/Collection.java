@@ -26,7 +26,7 @@ public class Collection {
     }
 
 
-    public Route searchById(Long id) {
+    public static Route searchById(Long id) {
         for (Route r : Routes) {
             if (r.getId().equals(id))
                 return r;
