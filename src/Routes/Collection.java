@@ -14,6 +14,10 @@ public class Collection {
         ArrayList<Route> Routes = new ArrayList<>();
         initializationDate = DateGenerator.generateCurrentDate();
     }
+    
+    public LocalDate getInitializationDate() {
+        return initializationDate;
+    }
 
     public static void show(){
         for (Route n: Routes){
