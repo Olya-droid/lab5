@@ -1,9 +1,11 @@
 package Readers;
 
+import Exceptions.EndOfSourceException;
 import Exceptions.WrongFileNameException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 
 public class FileSourceReader extends Reader {
@@ -19,5 +21,14 @@ public class FileSourceReader extends Reader {
         }
     }
 
-    
+    @Override
+    public String getLine() throws EndOfSourceException {
+        try {
+            System.out.print(bufferedReader.readLine() + "\n");
+            return bufferedReader.readLine();
+        } catch(IOException e){
+            throw new EndOfSourceException();
+        }
+    }
+
 }
