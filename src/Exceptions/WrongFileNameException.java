@@ -1,7 +1,7 @@
 package Exceptions;
 
 public class WrongFileNameException extends Exception {
-    public WrongFileNameException(String errorMessage) {
-        super(errorMessage);
+    public WrongFileNameException() {
+        super("Файл с данным именем не найден!");
     }
 }
