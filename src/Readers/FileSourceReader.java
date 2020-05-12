@@ -15,7 +15,7 @@ public class FileSourceReader extends Reader {
         try {
             this.bufferedReader = new BufferedReader(new FileReader(path));
         } catch (FileNotFoundException e) {
-            throw new WrongFileNameException("Файл с данным именем не найден!");
+            throw new WrongFileNameException();
         }
     }
 
