@@ -39,15 +39,16 @@ public class Route implements Comparable<Route>{
                 ')';
     }
 
+    @XmlElement
     public Long getId() {
         return id;
     }
 
-    @XmlElement
     public void setId(Long id) {
         this.id = id;
     }
 
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -57,36 +58,43 @@ public class Route implements Comparable<Route>{
         this.name = name;
     }
 
-    @XmlElement
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
+    @XmlJavaTypeAdapter(value = XmlManagers.XmlDateAdapter.class)
+    @XmlElement
     public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    @XmlJavaTypeAdapter(value = XmlManagers.XmlDateAdapter.class)
-    @XmlElement
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
     @XmlElement
+    public Location getFrom(){
+        return from;
+    }
+    
     public void setFrom(Location from) {
         this.from = from;
     }
 
     @XmlElement
+    public Location getTo(){
+        return to;
+    }
+    
     public void setTo(Location to) {
         this.to = to;
     }
 
+    @XmlElement
     public Float getDistance() {
         return distance;
     }
 
-    @XmlElement
     public void setDistance(Float distance) {
         this.distance = distance;
     }
