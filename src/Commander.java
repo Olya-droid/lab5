@@ -1,8 +1,4 @@
-import Commands.*;
-import Routes.Collection;
-import Readers.*;
-
-public class Commander {
+{
     public  static boolean switcher(Reader reader, Collection c, String s1, String s2) {
         switch (s1) {
             case ("help"):
@@ -32,7 +28,7 @@ public class Commander {
             case ("execute_script"):
                 return Execute_script.execute_script(c, s2);
             case ("exit"):
-                Exit.exit();
+                return Exit.exit();
             case ("history"):
                 History.history();
                 break;
