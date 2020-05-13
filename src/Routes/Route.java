@@ -1,7 +1,8 @@
 package Routes;
 
-public class Route {
-    private static long lastID = 0; // id прошлого элемента, увеличивается при появлении нового элемента
+import java.time.LocalDate;
+
+public class Route{
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -10,9 +11,8 @@ public class Route {
     private Location to; //Поле не может быть null
     private Float distance; //Поле может быть null, Значение поля должно быть больше 1
 
-    public Route (String name, Coordinates coordinates, Location from, Location to, Float distance){
-        Route.lastID +=1;
-        this.id = lastID;
+   /* public Route (String name, Coordinates coordinates, Location from, Location to, Float distance){
+        this.id = getUniqueId();
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = java.time.LocalDate.now();
@@ -20,11 +20,11 @@ public class Route {
         this.to = to;
         this.distance = distance;
 
-    }
+    } */
 
     @Override
     public String toString() {
-        return "Routes.Route(" +
+        return "Route(" +
                 "id = " + id +
                 ", name = " + name  +
                 ", coordinates = " + coordinates +
@@ -43,10 +43,6 @@ public class Route {
         this.id = id;
     }
 
-    public void setCoordinates(Coordinates coordinates) {
-        this.coordinates = coordinates;
-    }
-
     public String getName() {
         return name;
     }
@@ -55,8 +51,16 @@ public class Route {
         this.name = name;
     }
 
-    public Float getDistance() {
-        return distance;
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
+    public LocalDate getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(LocalDate creationDate) {
+        this.creationDate = creationDate;
     }
 
     public void setFrom(Location from) {
@@ -67,10 +71,13 @@ public class Route {
         this.to = to;
     }
 
+    public Float getDistance() {
+        return distance;
+    }
+
     public void setDistance(Float distance) {
         this.distance = distance;
     }
-
 
 
 }
