@@ -1,5 +1,9 @@
 package Routes;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Coordinates {
     public Coordinates(int x,  float y) {
         this.x = x;
@@ -11,10 +15,21 @@ public class Coordinates {
     public int getX() {
         return x;
     }
+    
+    @XmlElement
+    public void setX(int x) {
+        this.x = x;
+    }
 
     public float getY() {
         return y;
     }
+
+    @XmlElement
+    public void setY(float y) {
+        this.y = y;
+    }
+
 
     @Override
     public String toString() {
