@@ -1,11 +1,21 @@
 import java.io.*;
 
-public class Main {
-    public static void main(String[] args) throws IOException {
+import Exceptions.EndOfSourceException;
+import Exceptions.NoCommandException;
+import Readers.*;
+import Routes.Collection;
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s = reader.readLine();
-        System.out.println("Мы считали с клавиатуры эту строку:");
-        System.out.println(s);
+public class Main {
+    public static void main(String[] args) throws IOException, EndOfSourceException, NoCommandException {
+        boolean work = true;
+        Collection c = new Collection();
+        ConsoleSourceReader bufferReader = new ConsoleSourceReader();
+        String [] s;
+        while (work) {
+            System.out.println("Введите, что вам там надо: ");
+            s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
+            work = Commander.switcher(bufferReader, c, s[0], s[1]);
+        }
+        System.out.println("наконец-то эта программа завершается");
     }
 }
