@@ -6,23 +6,16 @@ import java.time.LocalDate;
 
 public class Collection {
 
-    public static ArrayList<Route> Routes;
-
+    public  ArrayList<Route> Routes;
     private LocalDate initializationDate;
 
     public Collection(){
-        ArrayList<Route> Routes = new ArrayList<>();
-        initializationDate = DateGenerator.generateCurrentDate();
-    }
-    
-    public LocalDate getInitializationDate() {
-        return initializationDate;
+       this.Routes = new ArrayList<>();
+        this.initializationDate = DateGenerator.generateCurrentDate();
     }
 
-    public static void show(){
-        for (Route n: Routes){
-            System.out.println("  " + n.toString());
-        }
+    public LocalDate getInitializationDate() {
+        return initializationDate;
     }
 
 
@@ -41,5 +34,5 @@ public class Collection {
         } while (this.searchById(id) != null);
         return id;
     }
-
+    
 }
