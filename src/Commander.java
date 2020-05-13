@@ -39,7 +39,7 @@ public class Commander {
                 Max_by_distance.max_by_distance(c);
                 break;
             case ("print_field_descending_distance"):
-                Print_field_descending_distance.print_field_descending_distance();
+                Print_field_descending_distance.print_field_descending_distance(c);
                 break;
             case ("reorder"):
                 Reorder.reorder(c);
