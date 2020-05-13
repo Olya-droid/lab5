@@ -11,21 +11,21 @@ public class Coordinates {
     }
     private int x; //Значение поля должно быть больше -836
     private float y; //Максимальное значение поля: 840, Поле не может быть null
-
+    
+    @XmlElement
     public int getX() {
         return x;
     }
-    
-    @XmlElement
+
     public void setX(int x) {
         this.x = x;
     }
 
+    @XmlElement
     public float getY() {
         return y;
     }
 
-    @XmlElement
     public void setY(float y) {
         this.y = y;
     }
