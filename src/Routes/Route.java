@@ -2,7 +2,7 @@ package Routes;
 
 import java.time.LocalDate;
 
-public class Route{
+public class Route implements Comparable<Route>{
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -79,5 +79,11 @@ public class Route{
         this.distance = distance;
     }
 
+    @Override
+    public int compareTo(Route r) {
+       if (this.getId() == r.getId()) {return 0;}
+       else if (this.getId()>r.getId()) {return 1;}
+       else return -1;
 
+    }
 }
