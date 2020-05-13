@@ -1,7 +1,11 @@
 package Routes;
 
 import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
+@XmlRootElement
 public class Route implements Comparable<Route>{
     private Long id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -39,6 +43,7 @@ public class Route implements Comparable<Route>{
         return id;
     }
 
+    @XmlElement
     public void setId(Long id) {
         this.id = id;
     }
@@ -47,10 +52,12 @@ public class Route implements Comparable<Route>{
         return name;
     }
 
+    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
 
+    @XmlElement
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
@@ -59,14 +66,18 @@ public class Route implements Comparable<Route>{
         return creationDate;
     }
 
+    @XmlJavaTypeAdapter(value = XmlManagers.XmlDateAdapter.class)
+    @XmlElement
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
 
+    @XmlElement
     public void setFrom(Location from) {
         this.from = from;
     }
 
+    @XmlElement
     public void setTo(Location to) {
         this.to = to;
     }
@@ -75,6 +86,7 @@ public class Route implements Comparable<Route>{
         return distance;
     }
 
+    @XmlElement
     public void setDistance(Float distance) {
         this.distance = distance;
     }
