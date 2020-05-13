@@ -13,30 +13,31 @@ public class Location {
         this.x = x;
         this.y = y;
         this.name = name;
-    }
+    }    
+    
+    @XmlElement
     public Long getX() {
         return x;
     }
-    
-    @XmlElement
+
     public void setX(Long x) {
         this.x = x;
     }
 
+    @XmlElement
     public Double getY() {
         return y;
     }
 
-    @XmlElement
     public void setY(Double y) {
         this.y = y;
     }
 
+    @XmlElement
     public String getName() {
         return name;
     }
 
-    @XmlElement
     public void setName(String name) {
         this.name = name;
     }
