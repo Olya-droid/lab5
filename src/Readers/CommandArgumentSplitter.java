@@ -14,7 +14,7 @@ public class CommandArgumentSplitter {
 
             if (ComArg.length == 2) {
                 ComArg[1] = ComArg[1].trim();
-            }
+            } else ComArg[1] = "";
             return ComArg;
 
         }
