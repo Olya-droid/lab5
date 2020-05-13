@@ -8,13 +8,13 @@ public class Add {
     static String description = "add {element} : добавить новый элемент в коллекцию";
 
     public static void add(Reader reader, Collection c, String s2) {
-                System.out.println("ну вот хочется тебе своими файлами место занимать?");
+   /*             System.out.println("ну вот хочется тебе своими файлами место занимать?");
         Route route = new Route();
         route.setId(c.generateUniqueID());
         String name =
         route.setName(name);
                 System.out.println("Можно было конечно и поинтереснее имя придумать. В следующий раз постарайся получше");
-                System.out.println("Ну давай, будем надеяться координаты поинтереснее будут");
+                System.out.println("Ну давай, может хоть координаты поинтереснее будут");
         int coordinateX =
         float coordinateY =
         route.setCoordinates(coordinateX, coordinateY);
@@ -36,6 +36,7 @@ public class Add {
         route.setCreationDate(java.time.LocalDate.now());
         c.Routes.add(route);
                 System.out.println("Ну что, добился чего хотел?");
+                */
     }
 
 
