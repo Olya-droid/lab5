@@ -1,9 +1,12 @@
 import Commands.*;
+import Exceptions.EndOfSourceException;
+import Exceptions.FileFormatException;
+import Exceptions.WrongFileNameException;
 import Routes.Collection;
 import Readers.*;
 
 public class Commander {
-    public  static boolean switcher(Reader reader, Collection c, String s1, String s2) {
+    public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws EndOfSourceException, WrongFileNameException, FileFormatException {
         switch (s1) {
             case ("help"):
                 Help.help();
@@ -15,13 +18,13 @@ public class Commander {
                 Show.show(c);
                 break;
             case ("add"):
-                Add.add(reader, c, s2);
+                Add.add(reader, c);
                 break;
             case ("update"):
                 Update.update(reader, c, s2);
                 break;
             case ("remove_by_id"):
-                Remove_by_id.remove_by_id(reader, c, s2);
+                Remove_by_id.remove_by_id(c, s2);
                 break;
             case ("clear"):
                 Clear.clear(c);
