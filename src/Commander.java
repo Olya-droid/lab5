@@ -1,8 +1,9 @@
 import Commands.*;
 import Routes.Collection;
+import Readers.*;
 
 public class Commander {
-    public static boolean switcher(Reader reader, Collection c, String s1, String s2) {
+    public  static boolean switcher(Reader reader, Collection c, String s1, String s2) {
         switch (s1) {
             case ("help"):
                 Help.help();
@@ -55,5 +56,6 @@ public class Commander {
             default:
                 System.out.println("Неизвестная команда. Попробуйте написать что-нибудь как-нибудь иначе.");
         }
+        return true;
     }
 }
