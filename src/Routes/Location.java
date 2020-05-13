@@ -1,5 +1,9 @@
 package Routes;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Location {
     private Long x; //Поле не может быть null
     private Double y; //Поле не может быть null
@@ -13,11 +17,28 @@ public class Location {
     public Long getX() {
         return x;
     }
+    
+    @XmlElement
+    public void setX(Long x) {
+        this.x = x;
+    }
+
     public Double getY() {
         return y;
     }
+
+    @XmlElement
+    public void setY(Double y) {
+        this.y = y;
+    }
+
     public String getName() {
         return name;
+    }
+
+    @XmlElement
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
