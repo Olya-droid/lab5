@@ -33,6 +33,7 @@ public class Add {
                 System.out.println("Давай посмотрим, что у нас там с Distance");
         float distance =
         route.setDistance(distance);
+        route.setCreationDate(java.time.LocalDate.now());
         c.Routes.add(route);
                 System.out.println("Ну что, добился чего хотел?");
     }
