@@ -10,7 +10,7 @@ public class Save {
 
         public static void save (Routes.Collection c) throws FileNotFoundException {
 
-                saveCollection(c, "data/input.xml");
+                saveCollection(c, "C:/Users/varte/IdeaProjects/lab5/src/data/input.xml");
 
         }
 

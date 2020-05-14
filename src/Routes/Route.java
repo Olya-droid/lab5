@@ -53,9 +53,13 @@ public class Route implements Comparable<Route>{
         return name;
     }
 
-    @XmlElement
     public void setName(String name) {
         this.name = name;
+    }
+
+    @XmlElement
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
     public void setCoordinates(Coordinates coordinates) {

@@ -9,6 +9,8 @@ public class Location {
     private Double y; //Поле не может быть null
     private String name; //Поле не может быть null
 
+    public Location(){}
+
     public Location(Long x, Double y,  String name) {
         this.x = x;
         this.y = y;
