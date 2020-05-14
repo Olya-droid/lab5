@@ -22,19 +22,29 @@ try {
     }
     route.setName(name);
 
-    System.out.print("\n" + "Координаты, пожалуйста." + "\n" + "X = ");
+    System.out.print("\n" + "Координаты, пожалуйста." + "\n" + "int X = ");
     int coordinateX = Checker.intChecker(reader.getLine());
-    //                    if (coordinateX == null) return;
-    System.out.print("Y = ");
+    if (coordinateX <= -836){
+        System.out.println("Coordinate x должно быть больше -836");
+        return;
+    }
+
+    System.out.print("float Y = ");
     float coordinateY = Checker.floatChecker(reader.getLine());
-    //                  if (coordinateY == null) return;
+    if (coordinateY >= 840){
+        System.out.println("Coordinate y должно быть меньше 840");
+        return;
+    }
+
     route.setCoordinates(new Coordinates(coordinateX, coordinateY));
 
-    System.out.print("\n" + "Откуда? (from)" + "\n" + "x = ");
+
+    System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
     long locationFromX = Checker.longChecker(reader.getLine());
-    //               if (Objects.equals(locationFromX, null)) return;
-    System.out.print("y = ");
+
+    System.out.print("double y = ");
     double locationFromY = Checker.doubleChecker(reader.getLine());
+
     System.out.print("Имя откуда:  ");
     String locationFromName = reader.getLine();
     if (locationFromName == null | locationFromName.equals("")) {
@@ -42,21 +52,35 @@ try {
         return;
     }
     route.setFrom(new Location(locationFromX, locationFromY, locationFromName));
-    System.out.print( "\n" +"Куда? (to)" + "\n" + "x = ");
+
+    System.out.print( "\n" +"Куда? (to)" + "\n" + "long x = ");
     long locationToX = Checker.longChecker(reader.getLine());
-    System.out.print("y = ");
+
+    System.out.print("double y = ");
     double locationToY = Checker.doubleChecker(reader.getLine());
+
     System.out.print("Имя куда:  ");
     String locationToName = reader.getLine();
     if (locationToName == null | locationToName.equals("")) {
         System.out.println("Пустая строка ни к чему не приведёт. Пока ты смотришь в пустую строку, пустая строка смотрит в тебя...");
         return;
     }
+
     route.setTo(new Location(locationToX, locationToY, locationToName));
-    System.out.print("\n" + "Давай посмотрим, что у нас там с Distance.  ");
+
+
+    System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
     float distance = Checker.floatChecker(reader.getLine());
+    if (!(distance > 1)) {
+        System.out.println("Значение Distance должно быть больше 1");
+        return;
+    }
     route.setDistance(distance);
+
+
     route.setCreationDate(java.time.LocalDate.now());
+
+
     c.Routes.add(route);
     System.out.println("Успех!");
 
