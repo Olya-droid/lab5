@@ -15,7 +15,7 @@ public class Average_of_distance {
             if (c.Routes.size() - countOfNull > 0)
                 System.out.println("Среднее значение distance: " + sum / (c.Routes.size() - countOfNull));
 
-        }
+        } else
         System.out.println("Коллекция пуста как банка кофе, купленая в начале выполнения этой работы");
     }
 }
