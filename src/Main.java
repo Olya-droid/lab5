@@ -21,7 +21,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         boolean work = true;
-        Collection c = new Collection();
+        Collection c = XmlManagers.Reader.getCollection("./src/data/input.xml");
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
         String [] s;
         while (work) {
