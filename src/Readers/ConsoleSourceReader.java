@@ -1,7 +1,5 @@
 package Readers;
 
-import Exceptions.EndOfSourceException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,11 +11,12 @@ public class ConsoleSourceReader extends Reader{
     }
 
     @Override
-    public String getLine() throws EndOfSourceException {
+    public String getLine(){
         try {
             return bufferedReader.readLine();
         } catch(IOException e){
-            throw new EndOfSourceException();
+            System.out.println("Ввод неожиданно прервался");
+            return null;
         }
     }
 

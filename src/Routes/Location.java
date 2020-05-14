@@ -13,8 +13,8 @@ public class Location {
         this.x = x;
         this.y = y;
         this.name = name;
-    }    
-    
+    }
+
     @XmlElement
     public Long getX() {
         return x;
@@ -44,7 +44,7 @@ public class Location {
 
     @Override
     public String toString() {
-        return "Routes.Location(" +
+        return "Location(" +
                 "x = " + x +
                 ", y = " + y +
                 ", name = " + name +

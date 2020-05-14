@@ -11,7 +11,7 @@ public class Coordinates {
     }
     private int x; //Значение поля должно быть больше -836
     private float y; //Максимальное значение поля: 840, Поле не может быть null
-    
+
     @XmlElement
     public int getX() {
         return x;
@@ -30,10 +30,9 @@ public class Coordinates {
         this.y = y;
     }
 
-
     @Override
     public String toString() {
-        return "Routes.Coordinates(" +
+        return "Coordinates(" +
                 "x = " + x
                 +  ", y = " + y
                 + ')';

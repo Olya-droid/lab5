@@ -1,21 +1,19 @@
 package XmlManagers;
 
-import Exceptions.FileFormatException;
-import Exceptions.WrongFileNameException;
-
+import Exceptions.FileNotFoundException;
 import Routes.Collection;
+
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class Reader {
 
-    public static Collection getCollection(String path) throws FileFormatException, WrongFileNameException {
+    public static Collection getCollection(String path) throws java.io.FileNotFoundException {
 
         try{
             File input = new File(path);
@@ -24,9 +22,11 @@ public class Reader {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(input));
             return (Collection) unmarshaller.unmarshal(bufferedReader);
         }catch (JAXBException e){
-            throw new FileFormatException();
+            System.out.println("Некорректный файл");
+            return null;
         }catch (FileNotFoundException e){
-            throw new WrongFileNameException();
+            System.out.println(e.getMessage());
+            return null;
         }
 
     }

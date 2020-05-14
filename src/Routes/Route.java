@@ -76,7 +76,7 @@ public class Route implements Comparable<Route>{
     public Location getFrom(){
         return from;
     }
-    
+
     public void setFrom(Location from) {
         this.from = from;
     }
@@ -85,7 +85,7 @@ public class Route implements Comparable<Route>{
     public Location getTo(){
         return to;
     }
-    
+
     public void setTo(Location to) {
         this.to = to;
     }
@@ -101,9 +101,9 @@ public class Route implements Comparable<Route>{
 
     @Override
     public int compareTo(Route r) {
-       if (this.getId() == r.getId()) {return 0;}
-       else if (this.getId()>r.getId()) {return 1;}
-       else return -1;
+        if (this.getId() == r.getId()) {return 0;}
+        else if (this.getId()>r.getId()) {return 1;}
+        else return -1;
 
     }
 }

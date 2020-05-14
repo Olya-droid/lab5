@@ -17,7 +17,7 @@ public class CommandArgumentSplitter {
 
         }
 
-        System.out.println("Команда не была введена!");
+        System.out.println("Вы не ввели команду. Попробуйте еще раз");
         return null;
 
     }

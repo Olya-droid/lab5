@@ -1,12 +1,11 @@
 import Commands.*;
-import Exceptions.EndOfSourceException;
-import Exceptions.FileFormatException;
-import Exceptions.WrongFileNameException;
 import Routes.Collection;
 import Readers.*;
 
+import java.io.FileNotFoundException;
+
 public class Commander {
-    public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws EndOfSourceException, WrongFileNameException, FileFormatException {
+    public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws FileNotFoundException {
         switch (s1) {
             case ("help"):
                 Help.help();

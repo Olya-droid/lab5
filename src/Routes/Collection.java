@@ -1,6 +1,8 @@
 package Routes;
-import Generators.IDGenerator;
+
 import Generators.DateGenerator;
+import Generators.IDGenerator;
+
 import java.util.ArrayList;
 import java.time.LocalDate;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,16 +15,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Collection {
 
     @XmlElement
-    public  ArrayList<Route> Routes;
+    public static ArrayList<Route> Routes;
+
     private LocalDate initializationDate;
 
     public Collection(){
-       this.Routes = new ArrayList<>();
+        this.Routes = new ArrayList<>();
         this.initializationDate = DateGenerator.generateCurrentDate();
     }
 
     public LocalDate getInitializationDate() {
         return initializationDate;
+    }
+
+    public static void show(){
+        for (Route n: Routes){
+            System.out.println("  " + n.toString());
+        }
     }
 
 
@@ -41,5 +50,5 @@ public class Collection {
         } while (this.searchById(id) != null);
         return id;
     }
-    
+
 }

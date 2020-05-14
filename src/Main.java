@@ -1,12 +1,9 @@
 import java.io.*;
-
-import Exceptions.EndOfSourceException;
-import Exceptions.NoCommandException;
 import Readers.*;
 import Routes.Collection;
 
 public class Main {
-    public static void main(String[] args) throws IOException, EndOfSourceException, NoCommandException {
+    public static void main(String[] args) throws FileNotFoundException {
         boolean work = true;
         Collection c = new Collection();
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
@@ -16,6 +13,6 @@ public class Main {
             s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
             work = Commander.switcher(bufferReader, c, s[0], s[1]);
         }
-        System.out.println("наконец-то эта программа завершается");
+        System.out.println("Наконец-то эта программа завершается...");
     }
 }
