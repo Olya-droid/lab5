@@ -1,14 +1,22 @@
 package Commands;
 import Readers.*;
-import Routes.Collection;
+import Routes.Route;
 
 public class Remove_by_id {
 
         static String description ="remove_by_id id : удалить элемент из коллекции по его id";
 public static void remove_by_id( Routes.Collection c, String s2){
-       long removeId = Checker.longChecker(s2);
+    if (s2==null | s2.equals("")) {
+        System.out.println("кажется вы забыли ввести айди");
+        return;
+    }
 
-       c.Routes.remove(c.Routes.indexOf(c.searchById(removeId)));
+       long removeId = Checker.longChecker(s2);
+    Route r = c.searchById(removeId);
+    if (r ==null) {System.out.println("похоже элемента с таким айди не существует");
+        return;
+    }
+       c.Routes.remove(c.Routes.indexOf(r));
 }
 
 }
