@@ -34,8 +34,17 @@ public class Update {
 
                 System.out.print("\n" +"Раньше координаты были  "+  c.Routes.get(index).getCoordinates() +"\n" + "Координаты теперь будут" + "\n" + "X = ");
                 int coordinateX = Checker.intChecker(reader.getLine());
+                if (coordinateX <= -836){
+                    System.out.println("Coordinate x должно быть больше -836");
+                    return;
+                }
+
                 System.out.print("Y = ");
                 float coordinateY = Checker.floatChecker(reader.getLine());
+                if (coordinateY >= 840){
+                    System.out.println("Coordinate y должно быть меньше 840");
+                    return;
+                }
 
                 System.out.print("\n" +"Раньше откуда было "+c.Routes.get(index).getFrom() +"\n" + "Откуда теперь? (from)" + "\n" + "x = ");
                 long locationFromX = Checker.longChecker(reader.getLine());
@@ -60,6 +69,10 @@ public class Update {
                 }
                 System.out.print("\n" +"Раньше Distance было "+c.Routes.get(index).getDistance() +"\n" + "Давай посмотрим, что у нас там с Distance теперь.  ");
                 float distance = Checker.floatChecker(reader.getLine());
+                if (!(distance > 1)) {
+                    System.out.println("Значение Distance должно быть больше 1");
+                    return;
+                }
 
 
                 c.Routes.get(index).setName(name);
