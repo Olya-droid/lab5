@@ -25,7 +25,7 @@ public class Saver {
         }catch (JAXBException e){
             throw new FileFormatException();
         }catch (FileNotFoundException e) {
-            throw new WrongFileNameException();
+            System.out.println(e.getMessage());
         }
     }
 
