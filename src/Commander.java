@@ -39,7 +39,7 @@ public class Commander {
             case ("history"):
                 History.history();
                 break;
-            case ("max_by_distace"):
+            case ("max_by_distance"):
                 Max_by_distance.max_by_distance(c);
                 break;
             case ("print_field_descending_distance"):
