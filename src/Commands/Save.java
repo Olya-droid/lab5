@@ -1,18 +1,17 @@
 package Commands;
 
-import Exceptions.FileFormatException;
-import Exceptions.WrongFileNameException;
+import java.io.FileNotFoundException;
 
 import static XmlManagers.Saver.saveCollection;
 
 public class Save {
 
-    static String description ="save : сохранить коллекцию в файл";
+        static String description ="save : сохранить коллекцию в файл";
 
-    public static void save (Routes.Collection c) throws WrongFileNameException, FileFormatException {
+        public static void save (Routes.Collection c) throws FileNotFoundException {
 
-        saveCollection(c, "input.xml");
+                saveCollection(c, "data/input.xml");
 
-    }
+        }
 
 }

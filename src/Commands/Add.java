@@ -1,5 +1,5 @@
 package Commands;
-import Exceptions.EndOfSourceException;
+
 import Readers.*;
 import Routes.*;
 
@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Add {
     static String description = "add {element} : добавить новый элемент в коллекцию";
 
-    public static void add(ConsoleSourceReader reader, Collection c) throws EndOfSourceException, NullPointerException {
+    public static void add(ConsoleSourceReader reader, Collection c) throws NullPointerException {
 try {
     System.out.println("Давайте попробуем добавить элемент." + "\n" + "Как вы хотите, чтобы его звали?");
     Route route = new Route();
