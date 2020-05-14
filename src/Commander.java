@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 
 public class Commander {
     public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws FileNotFoundException {
+        boolean historyCheck = true;
         switch (s1) {
             case ("help"):
                 Help.help();
@@ -56,8 +57,10 @@ public class Commander {
 
 
             default:
+                historyCheck = false;
                 System.out.println("Неизвестная команда. Попробуйте написать что-нибудь как-нибудь иначе.");
         }
+        if(historyCheck)History.addInArray(s1);
         return true;
     }
 }
