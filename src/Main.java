@@ -25,7 +25,7 @@ public class Main {
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
         String [] s;
         while (work) {
-            System.out.println("\n \n"+"Введите, что вам там надо: ");
+            System.out.print("\n \n"+"Введите, что вам там надо: ");
             s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
             work = Commander.switcher(bufferReader, c, s[0], s[1]);
         }
