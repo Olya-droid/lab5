@@ -12,6 +12,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+/**
+ * Класс-коллекция
+ */
 public class Collection {
 
     @XmlElement
@@ -19,22 +22,28 @@ public class Collection {
 
     private LocalDate initializationDate;
 
+    /**
+     * Конструктор коллекии
+     */
     public Collection(){
         this.Routes = new ArrayList<>();
         this.initializationDate = DateGenerator.generateCurrentDate();
     }
 
+    /**
+     * Метод для получения даты
+     * @return LocalDate
+     */
     public LocalDate getInitializationDate() {
         return initializationDate;
     }
 
-    public static void show(){
-        for (Route n: Routes){
-            System.out.println("  " + n.toString());
-        }
-    }
 
-
+    /**
+     * Метод поиска элемента по id
+     * @param id id
+     * @return элемент коллекции
+     */
     public Route searchById(long id) {
         for (Route r : Routes) {
             if (r.getId().equals(id))
@@ -43,6 +52,10 @@ public class Collection {
         return null;
     }
 
+    /**
+     * Метод для создания уникального id
+     * @return уникальный id (дщтп)
+     */
     public long generateUniqueID() {
         long id;
         do {
