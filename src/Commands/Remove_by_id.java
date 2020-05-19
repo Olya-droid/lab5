@@ -2,10 +2,19 @@ package Commands;
 import Readers.*;
 import Routes.Route;
 
+/**
+ * Команда "УДОЛИ!"
+ */
 public class Remove_by_id {
 
         static String description ="remove_by_id id : удалить элемент из коллекции по его id";
-public static void remove_by_id( Routes.Collection c, String s2){
+
+    /**
+     * метод удаления элемента коллекции по его id
+     * @param c коллекция
+     * @param s2 id
+     */
+    public static void remove_by_id( Routes.Collection c, String s2){
     if (s2==null | s2.equals("")) {
         System.out.println("кажется вы забыли ввести айди");
         return;
