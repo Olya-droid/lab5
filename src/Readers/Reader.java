@@ -2,7 +2,10 @@ package Readers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-
+/**
+ * Абстрактный класс для BufferedReader
+ * Наследники: ConsoleSourceReader и FileSourceReader
+ */
 public abstract class Reader {
 
     protected BufferedReader bufferedReader;
