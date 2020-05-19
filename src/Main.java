@@ -1,27 +1,22 @@
 import java.io.*;
 import Readers.*;
 import Routes.Collection;
-import java.io.File;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+import XmlManagers.XmlReader;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-
+/**
+ * Главный класс, в котором происходит вся магия
+ */
 
 public class Main {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    /**
+     * Главный метод, в котором происходит вся магия
+     */
+    public static void main(String[] args) throws IOException {
 
-        boolean work = true;
-        Collection c = XmlManagers.Reader.getCollection("./src/data/input.xml");
+        boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
+        Collection c = XmlReader.getCollection("./src/data/input.xml");
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
         String [] s;
         while (work) {
