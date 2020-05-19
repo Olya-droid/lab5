@@ -2,9 +2,17 @@ package Commands;
 import Routes.Collection;
 import Routes.Route;
 
+/**
+ * Команда "МАКСИМАЛЬНЫЙ"
+ */
 public class Max_by_distance {
         static String description ="max_by_distance: вывести любой объект из коллекции, значение поля distance которого является максимальным";
-public static void  max_by_distance (Collection c){
+
+        /**
+         *  Метод для вывода элемента коллекции Routes с максимальным значением поля distance
+         * @param c коллекция
+         */
+        public static void  max_by_distance (Collection c){
         if (c.Routes.size() > 0) {
                 Route maxRoutebyDist = c.Routes.get(0);
                 for (Route r: c.Routes) {
