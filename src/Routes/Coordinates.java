@@ -9,8 +9,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Coordinates {
 
-    public Coordinates(){}
-
     /**
      * Конструктор
      * @param x координата X
