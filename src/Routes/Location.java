@@ -3,14 +3,21 @@ package Routes;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Поле класса Route
+ */
 @XmlRootElement
 public class Location {
     private Long x; //Поле не может быть null
     private Double y; //Поле не может быть null
     private String name; //Поле не может быть null
 
-    public Location(){}
-
+    /**
+     * Конструктор
+     * @param x Координата x
+     * @param y Координата y
+     * @param name Имя
+     */
     public Location(Long x, Double y,  String name) {
         this.x = x;
         this.y = y;
