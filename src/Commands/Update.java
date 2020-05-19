@@ -6,8 +6,19 @@ import Routes.Route;
 
 import java.io.IOException;
 
+/**
+ * Команда  "ПРАВКИ!"
+ */
 public class Update {
         static String description ="update id {element} : обновить значение элемента коллекции, id которого равен заданному.";
+
+    /**
+     * Метод для изменения значений элемента по id
+     * @param reader объект - считыватель
+     * @param c коллекция
+     * @param s2 id
+     * @throws IOException
+     */
         public static void update (Reader reader, Routes.Collection c, String s2) throws IOException {
                 if (s2==null | s2.equals("")) {
                         System.out.println("кажется вы забыли ввести айди");
