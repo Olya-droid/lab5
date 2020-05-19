@@ -3,6 +3,9 @@ package XmlManagers;
 import java.time.LocalDate;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
+/**
+ * Класс для адаптации даты к xml 
+ */
 
 public class XmlDateAdapter extends XmlAdapter<String, LocalDate> {
 
