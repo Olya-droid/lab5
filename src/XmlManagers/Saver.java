@@ -9,8 +9,17 @@ import javax.xml.bind.Marshaller;
 import java.io.PrintWriter;
 import java.io.File;
 
+/**
+ * Класс - сохранщик
+ */
 public class Saver {
 
+    /**
+     * Метод для сохранения коллекции в файл
+     * @param c коллекция
+     * @param path путь до файла
+     * @throws java.io.FileNotFoundException
+     */
     public static void saveCollection(Collection c, String path) throws java.io.FileNotFoundException {
 
         try{
