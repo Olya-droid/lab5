@@ -3,11 +3,19 @@ package Routes;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Поле класса Route 
+ */
 @XmlRootElement
 public class Coordinates {
 
     public Coordinates(){}
 
+    /**
+     * Конструктор
+     * @param x координата X
+     * @param y координата Y
+     */
     public Coordinates(int x,  float y) {
         this.x = x;
         this.y = y;
