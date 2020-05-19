@@ -1,7 +1,15 @@
 package Commands;
 
+/**
+ * Команда "СРЗНАЧ"
+ */
 public class Average_of_distance {
     static String description ="average_of_distance : вывести среднее значение поля distance для всех элементов коллекции.";
+
+    /**
+     * Метод для вывода среднего значения поля distance для всех элементов коллекции
+     * @param c коллекция
+     */
     public static void average_of_distance(Routes.Collection c) {
         if (c.Routes.size() > 0) {
             Float sum = 0f;
