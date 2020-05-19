@@ -1,7 +1,14 @@
 package Readers;
 
+/**
+ * Класс для разделения строки
+ */
 public class CommandArgumentSplitter {
-
+    /**
+     * Метод для разделения вводимой строки на две и удаления пробелов 
+     * @param readLine строка
+     * @return массив строк из двух элементов или null 
+     */
     public static String[] comArgSplitter(String readLine) {
 
         if (readLine != null) {
