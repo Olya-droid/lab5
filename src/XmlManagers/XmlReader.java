@@ -11,8 +11,16 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class Reader {
-
+/**
+ * Класс для чтения xml 
+ */
+public class XmlReader {
+    /**
+     * Метод для получения коллекции из файла xml 
+     * @param path путь
+     * @return Коллекция  (Collection)
+     * @throws java.io.FileNotFoundException
+     */
     public static Collection getCollection(String path) throws java.io.FileNotFoundException {
 
         try{
