@@ -12,11 +12,11 @@ import java.io.File;
 import java.io.FileReader;
 
 /**
- * Класс для чтения xml 
+ * Класс для чтения xml
  */
 public class XmlReader {
     /**
-     * Метод для получения коллекции из файла xml 
+     * Метод для получения коллекции из файла xml
      * @param path путь
      * @return Коллекция  (Collection)
      * @throws java.io.FileNotFoundException
@@ -31,10 +31,12 @@ public class XmlReader {
             return (Collection) unmarshaller.unmarshal(bufferedReader);
         }catch (JAXBException e){
             System.out.println("Некорректный файл");
-            return null;
+            System.out.println("Коллекция создана с чистого листа");
+            return new Collection();
         }catch (FileNotFoundException e){
             System.out.println(e.getMessage());
-            return null;
+            System.out.println("Коллекция создана с чистого листа");
+            return new Collection();
         }
 
     }
