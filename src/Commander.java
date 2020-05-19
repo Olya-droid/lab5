@@ -3,11 +3,24 @@ import Routes.Collection;
 import Readers.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
+/**
+ * Класс, соотносящий введённую команду с доступными командами
+ */
 public class Commander {
-    public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws FileNotFoundException {
+    /**
+     * Распределение команд
+     * @param reader объект - считыватель
+     * @param c коллекция
+     * @param s1 команда
+     * @param s2 данные, читаемые в одной строке с командой
+     * @return возвращает true, если не была введена команда exit
+     * @throws IOException
+     */
+    public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws IOException {
         boolean historyCheck = true;
-        switch (s1) {
+        switch (s1.toLowerCase()) {
             case ("help"):
                 Help.help();
                 break;
