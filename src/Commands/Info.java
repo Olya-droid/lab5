@@ -1,10 +1,18 @@
 package Commands;
 
+/**
+ * Команда "ИНФОРМБЮРО"
+ */
 public class Info {
+
     static String description ="info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)";
+
+    /**
+     * Отображение актуальной информации о коллекции
+     */
     public static void info(Routes.Collection c) {
-        System.out.println("Тип коллекции: " + c.Routes.getClass().getName());
-        System.out.println("Колличество элементов: " + c.Routes.size());
-        System.out.println("Коллеция создана: " + c.getInitializationDate());
+        System.out.println("Коллекция представляет собой: " + c.Routes.getClass().getName());
+        System.out.println("В коллекции: " + c.Routes.size()+ " элементов");
+        System.out.println("Коллеция была создана: " + c.getInitializationDate());
     }
 }
