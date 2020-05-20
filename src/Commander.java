@@ -1,8 +1,8 @@
-import Commands.*;
+package Commands;
+
 import Routes.Collection;
 import Readers.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -18,7 +18,7 @@ public class Commander {
      * @return возвращает true, если не была введена команда exit
      * @throws IOException
      */
-    public  static boolean switcher(ConsoleSourceReader reader, Collection c, String s1, String s2) throws IOException {
+    public  static boolean switcher(Reader reader, Collection c, String s1, String s2) throws IOException {
         boolean historyCheck = true;
         switch (s1.toLowerCase()) {
             case ("help"):
