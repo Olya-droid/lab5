@@ -95,6 +95,9 @@ public class Add {
 
         } catch (NullPointerException e) {
             return;
+        } catch (IOException e) {
+            System.out.println("Ту появилась ошибочка значит вы сделали что-то не так");
+            return;
         }
 
     }
