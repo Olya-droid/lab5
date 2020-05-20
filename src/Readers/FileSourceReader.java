@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 /**
- * Класс для чтения из файла 
+ * Класс для чтения из файла
  */
 public class FileSourceReader extends Reader {
 
@@ -24,8 +24,9 @@ public class FileSourceReader extends Reader {
     @Override
     public String getLine(){
         try {
-            System.out.print(bufferedReader.readLine() + "\n");
-            return bufferedReader.readLine();
+            String s = bufferedReader.readLine();
+           System.out.print( s + "\n");
+            return s;
         } catch(IOException e){
             System.out.println("Ввод неожиданно прервался");
             return null;
