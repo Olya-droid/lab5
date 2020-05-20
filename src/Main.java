@@ -3,6 +3,7 @@ import Readers.ConsoleSourceReader;
 import Routes.Collection;
 import XmlManagers.XmlReader;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -14,6 +15,7 @@ public class Main {
     /**
      * Главный метод, в котором происходит вся магия
      */
+    
     public static void main(String[] args) throws IOException {
 
         boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
@@ -22,13 +24,21 @@ public class Main {
         String path;
         String[] s;
 
-        System.out.println("Введите расположение файла с коллекцией. Если хотите начать работать с пустой коллекцией, нажмите Enter.");
-        path = bufferReader.getLine();
-        if (path == null) {
-            path = "resources/input.xml";
+        System.out.println("Введите расположение файла с коллекцией: ");
+        path = bufferReader.getLine()+"";
+
+        try {
+            //if (path.equals("")) {
+            // path = "resources/input.xml";
+            //c.setPath(path);
+            //}
+            c.setPath(path);
+            c = XmlReader.getCollection(c.getPath());
+        }catch (FileNotFoundException e){
+            //path =
+            System.out.println("Ты чево наделал................");
+            work = false;
         }
-        c.setPath(path);
-        c = XmlReader.getCollection(c.getPath());
 
         while (work) {
             System.out.print("\n \n" + "Введите, что вам надо: ");
