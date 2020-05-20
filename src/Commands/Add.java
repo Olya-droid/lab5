@@ -20,7 +20,7 @@ public class Add {
      * Метод для добавления новых элементов в коллекцию
      * @param reader объект - считыватель
      * @param c коллекция
-     * @throws NullPointerException
+     * @throws NullPointerException, IOException
      */
     public static void add(Reader reader, Collection c) throws NullPointerException, IOException {
         Route route = new Route();
@@ -45,6 +45,7 @@ public class Add {
      * @param reader объект - считыватель
      * @param c коллекция
      * @param route объект
+     * @throws IOException
      */
     protected static void addName (Reader reader, Collection c, Route route) throws IOException {
         System.out.print("Давайте попробуем добавить элемент." + "\n" + "Как вы хотите, чтобы его звали?  ");
@@ -62,6 +63,7 @@ public class Add {
      * @param reader объект - считыватель
      * @param c коллекция
      * @param route объект
+     * @throws IOException
      */
     protected static void addCoordinates (Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Координаты, пожалуйста." + "\n" + "int X = ");
@@ -102,6 +104,7 @@ public class Add {
      * @param reader объект - считыватель
      * @param c коллекция
      * @param route объект
+     * @throws IOException
      */
     protected static void addFrom(Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
@@ -141,6 +144,7 @@ public class Add {
      * @param reader объект - считыватель
      * @param c коллекция
      * @param route объект
+     * @throws IOException
      */
     protected static void  addTo (Reader reader, Collection c, Route route) throws IOException {
         System.out.print( "\n" +"Куда? (to)" + "\n" + "long x = ");
@@ -180,6 +184,7 @@ public class Add {
      * @param reader объект - считыватель
      * @param c коллекция
      * @param route объект
+     * @throws IOException
      */
     protected static void addDist(Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
