@@ -31,12 +31,10 @@ public class XmlReader {
             return (Collection) unmarshaller.unmarshal(bufferedReader);
         }catch (JAXBException e){
             System.out.println("Некорректный файл");
-            System.out.println("Коллекция создана с чистого листа");
-            return new Collection();
+            return new null;
         }catch (FileNotFoundException e){
             System.out.println(e.getMessage());
-            System.out.println("Коллекция создана с чистого листа");
-            return new Collection();
+            return new null;
         }
 
     }
