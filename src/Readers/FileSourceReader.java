@@ -12,11 +12,9 @@ import java.io.IOException;
  */
 public class FileSourceReader extends Reader {
 
-    private String path;
-
     public FileSourceReader(String path) throws java.io.FileNotFoundException {
-        this.path = path;
         try {
+            File script = new File(path);
             this.bufferedReader = new BufferedReader(new FileReader(path));
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());;
