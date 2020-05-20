@@ -22,7 +22,7 @@ public class Main {
         while (work) {
             System.out.print("\n \n"+"Введите, что вам там надо: ");
             s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
-            work = Commander.switcher(bufferReader, c, s[0], s[1]);
+            work = Commands.Commander.switcher(bufferReader, c, s[0], s[1]);
         }
         System.out.println("Наконец-то эта программа завершается...");
 
