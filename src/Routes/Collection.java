@@ -64,7 +64,7 @@ public class Collection {
 
     /**
      * Метод для создания уникального id
-     * @return уникальный id (дщтп)
+     * @return уникальный id (long)
      */
     public long generateUniqueID() {
         long id;
