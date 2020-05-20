@@ -4,6 +4,7 @@ import Exceptions.FileNotFoundException;
 import Readers.CommandArgumentSplitter;
 import Readers.ConsoleSourceReader;
 import Readers.FileSourceReader;
+import java.io.IOException;
 
 /**
  * Команда "СКРИПТ"
