@@ -1,5 +1,6 @@
 package Commands;
 
+import javax.xml.bind.JAXBException;
 import java.io.FileNotFoundException;
 
 import static XmlManagers.Saver.saveCollection;
@@ -16,9 +17,9 @@ public class Save {
          * @param c коллекция
          * @throws FileNotFoundException
          */
-        public static void save (Routes.Collection c) throws FileNotFoundException {
+        public static void save (Routes.Collection c) throws FileNotFoundException{
 
-                saveCollection(c, "resources/input.xml");
+                saveCollection(c, c.getPath());
 
         }
 
