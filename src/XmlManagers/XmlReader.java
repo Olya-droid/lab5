@@ -21,7 +21,7 @@ public class XmlReader {
      * @return Коллекция  (Collection)
      * @throws java.io.FileNotFoundException
      */
-    public static Collection getCollection(String path) throws java.io.FileNotFoundException {
+    public static Collection getCollection(String path) {
 
         try{
             File input = new File(path);
