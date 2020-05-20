@@ -62,7 +62,7 @@ public class Main {
         }
 
         System.out.println("Наконец-то эта программа завершается...");
-
+        bufferReader.close();
     }
 
 }
