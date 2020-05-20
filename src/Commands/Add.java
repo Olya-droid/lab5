@@ -3,7 +3,7 @@ package Commands;
 import Readers.*;
 import Routes.*;
 
-import java.util.Objects;
+import java.io.IOException;
 
 /**
  * Команда "Добавить элемент"
@@ -18,7 +18,7 @@ public class Add {
      * @param c коллекция
      * @throws NullPointerException
      */
-    public static void add(ConsoleSourceReader reader, Collection c) throws NullPointerException {
+    public static void add(Reader reader, Collection c) throws NullPointerException {
         try {
             System.out.print("Давайте попробуем добавить элемент." + "\n" + "Как вы хотите, чтобы его звали?  ");
             Route route = new Route();
