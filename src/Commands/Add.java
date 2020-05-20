@@ -2,7 +2,6 @@ package Commands;
 
 import Readers.*;
 import Routes.*;
-
 import java.io.IOException;
 
 /**
@@ -23,7 +22,7 @@ public class Add {
      * @param c коллекция
      * @throws NullPointerException
      */
-    public static void add(ConsoleSourceReader reader, Collection c) throws NullPointerException, IOException {
+    public static void add(Reader reader, Collection c) throws NullPointerException, IOException {
         Route route = new Route();
         route.setId(c.generateUniqueID());
         while (!Add.hasName) addName(reader, c, route);
@@ -47,7 +46,7 @@ public class Add {
      * @param c коллекция
      * @param route объект
      */
-    protected static void addName (ConsoleSourceReader reader, Collection c, Route route){
+    protected static void addName (Reader reader, Collection c, Route route) throws IOException {
         System.out.print("Давайте попробуем добавить элемент." + "\n" + "Как вы хотите, чтобы его звали?  ");
         String name = reader.getLine();
         if (  name.equals("") || name == null) {
@@ -64,7 +63,7 @@ public class Add {
      * @param c коллекция
      * @param route объект
      */
-    protected static void addCoordinates (ConsoleSourceReader reader, Collection c, Route route){
+    protected static void addCoordinates (Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Координаты, пожалуйста." + "\n" + "int X = ");
         String s = reader.getLine();
         if (  s.equals("") || s == null) {
@@ -104,7 +103,7 @@ public class Add {
      * @param c коллекция
      * @param route объект
      */
-    protected static void addFrom(ConsoleSourceReader reader, Collection c, Route route){
+    protected static void addFrom(Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
 
         String s = reader.getLine();
@@ -143,7 +142,7 @@ public class Add {
      * @param c коллекция
      * @param route объект
      */
-    protected static void  addTo (ConsoleSourceReader reader, Collection c, Route route){
+    protected static void  addTo (Reader reader, Collection c, Route route) throws IOException {
         System.out.print( "\n" +"Куда? (to)" + "\n" + "long x = ");
         String s = reader.getLine();
         if (  s.equals("") || s == null) {
@@ -182,7 +181,7 @@ public class Add {
      * @param c коллекция
      * @param route объект
      */
-    protected static void addDist(ConsoleSourceReader reader, Collection c, Route route){
+    protected static void addDist(Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
         String s = reader.getLine();
         if (  s.equals("") || s == null) {
