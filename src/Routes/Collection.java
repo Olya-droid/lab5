@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
+
 /**
  * Класс-коллекция
  */
@@ -21,6 +22,7 @@ public class Collection {
     public static ArrayList<Route> Routes;
 
     private LocalDate initializationDate;
+    private String path;
 
     /**
      * Конструктор коллекии
@@ -28,6 +30,14 @@ public class Collection {
     public Collection(){
         this.Routes = new ArrayList<>();
         this.initializationDate = DateGenerator.generateCurrentDate();
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     /**
