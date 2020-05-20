@@ -18,16 +18,7 @@ public class Route implements Comparable<Route>{
     private Location to; //Поле не может быть null
     private Float distance; //Поле может быть null, Значение поля должно быть больше 1
 
-   /* public Route (String name, Coordinates coordinates, Location from, Location to, Float distance){
-        this.id = getUniqueId();
-        this.name = name;
-        this.coordinates = coordinates;
-        this.creationDate = java.time.LocalDate.now();
-        this.from = from;
-        this.to = to;
-        this.distance = distance;
-
-    } */
+    public Route(){};
 
     @Override
     public String toString() {
