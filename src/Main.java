@@ -27,7 +27,7 @@ public class Main {
         if (path == null) {
             path = "resources/input.xml";
         }
-        c.setPath(bufferReader.getLine());
+        c.setPath(path);
         c = XmlReader.getCollection(c.getPath());
 
         while (work) {
