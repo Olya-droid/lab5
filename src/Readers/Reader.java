@@ -12,4 +12,12 @@ public abstract class Reader {
 
     public abstract String getLine() throws IOException;
 
+    public void close(){
+        try {
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
