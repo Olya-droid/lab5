@@ -18,7 +18,7 @@ public class Save {
          */
         public static void save (Routes.Collection c) throws FileNotFoundException {
 
-                saveCollection(c, "./src/data/input.xml");
+                saveCollection(c, "resources/input.xml");
 
         }
 
