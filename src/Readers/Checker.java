@@ -11,31 +11,31 @@ public class Checker {
      * @return число (int) или null
      */
     public static  Integer intChecker (String s) {
-        if (s == null | s.equals("")) {
+        if (s.equals("") || s == null ) {
             System.out.println("Строка не читается или пустая. Попробуйте ещё разок, уверен, в следующий раз обязательно получится!");
-            return  null;}
+            return null;}
         try {
             return Integer.parseInt(s);
         }catch (Exception e) {
-            System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
+         //   System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
     }
-    
-    
+
+
     /**
      * Проверка на Long
      * @param s строка
      * @return число (long) или null
      */
     public static Long longChecker (String s){
-        if (s == null | s.equals("")) {
+        if ( s.equals("") || s == null) {
             System.out.println("Строка не читается или пустая. Попробуйте ещё разок, уверен, в следующий раз обязательно получится!");
             return  null;}
         try {
             return Long.parseLong(s);
         }catch (Exception e) {
-            System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
+       //     System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
 
@@ -46,13 +46,13 @@ public class Checker {
      * @return число (float) или null
      */
     public static Float floatChecker (String s){
-        if (s == null | s.equals("")) {
+        if ( s.equals("") || s == null) {
             System.out.println("Строка не читается или пустая. Попробуйте ещё разок, уверен, в следующий раз обязательно получится!");
             return  null;}
         try {
             return Float.parseFloat(s);
         }catch (Exception e) {
-            System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
+    //        System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
 
@@ -64,13 +64,13 @@ public class Checker {
      * @return число (double) или null
      */
     public static Double doubleChecker (String s){
-        if (s == null | s.equals("")) {
+        if ( s.equals("") || s == null) {
             System.out.println("Строка не читается или пустая. Попробуйте ещё разок, уверен, в следующий раз обязательно получится!");
             return  null;}
         try {
             return Double.parseDouble(s);
         }catch (Exception e) {
-            System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
+   //         System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
 
