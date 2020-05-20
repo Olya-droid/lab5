@@ -16,7 +16,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
-        Collection c = XmlReader.getCollection("./src/data/input.xml");
+        Collection c = XmlReader.getCollection("resources/input.xml");
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
         String [] s;
         while (work) {
