@@ -19,7 +19,11 @@ public class Save {
          */
         public static void save (Routes.Collection c) throws FileNotFoundException{
 
-                saveCollection(c, c.getPath());
+                try {
+                        saveCollection(c, c.getPath());
+                } catch (NullPointerException e){
+                        System.out.println("Нельзя сохранить пустую коллекцию");
+                }
 
         }
 
