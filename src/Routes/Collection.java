@@ -5,10 +5,7 @@ import Generators.IDGenerator;
 
 import java.util.ArrayList;
 import java.time.LocalDate;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -21,8 +18,11 @@ public class Collection {
     @XmlElement
     public static ArrayList<Route> Routes;
 
-    private LocalDate initializationDate;
+    @XmlTransient
+    private final LocalDate initializationDate;
+    @XmlTransient
     private String path;
+
 
     /**
      * Конструктор коллекии
@@ -40,6 +40,9 @@ public class Collection {
         this.path = path;
     }
 
+
+    //@XmlJavaTypeAdapter(value = XmlManagers.XmlDateAdapter.class)
+    @XmlTransient
     /**
      * Метод для получения даты
      * @return LocalDate
