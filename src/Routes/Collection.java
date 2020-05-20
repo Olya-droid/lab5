@@ -41,7 +41,6 @@ public class Collection {
     }
 
 
-    //@XmlJavaTypeAdapter(value = XmlManagers.XmlDateAdapter.class)
     @XmlTransient
     /**
      * Метод для получения даты
