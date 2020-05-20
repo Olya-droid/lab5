@@ -12,6 +12,8 @@ public class Location {
     private Double y; //Поле не может быть null
     private String name; //Поле не может быть null
 
+    public Location(){};
+
     /**
      * Конструктор
      * @param x Координата x
