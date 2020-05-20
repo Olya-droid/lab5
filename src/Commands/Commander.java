@@ -2,7 +2,6 @@ package Commands;
 
 import Routes.Collection;
 import Readers.*;
-
 import java.io.IOException;
 
 /**
@@ -35,6 +34,12 @@ public class Commander {
                 break;
             case ("update"):
                 Update.update(reader, c, s2);
+                break;
+            case ("draw_a_cat"):
+                Draw.draw_a_cat();
+                break;
+            case ("draw_all_cats"):
+                Draw.draw_all();
                 break;
             case ("remove_by_id"):
                 Remove_by_id.remove_by_id(c, s2);
