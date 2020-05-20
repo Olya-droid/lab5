@@ -1,8 +1,10 @@
 import Readers.CommandArgumentSplitter;
 import Readers.ConsoleSourceReader;
+import Readers.FileSourceReader;
 import Routes.Collection;
 import XmlManagers.XmlReader;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import sun.misc.Signal;
@@ -20,7 +22,7 @@ public class Main {
      * Главный метод, в котором происходит вся магия
      */
 
-    public static void main(String[] args) throws IOException, JAXBException {
+    public static void main(String[] args) throws IOException {
 
         final long start = System.nanoTime();
         Signal.handle(new Signal("INT"), new SignalHandler() {
@@ -39,9 +41,12 @@ public class Main {
         String path;
         String[] s;
 
-        System.out.println("Введите расположение файла с коллекцией: ");
+        System.out.println("\n \n" + "Введите расположение файла с коллекцией: ");
         path = bufferReader.getLine()+"";
-
+        while (!new File(path).exists()){
+            System.out.println("такого файла там нет, введите другой путь");
+            path = bufferReader.getLine()+"";
+        }
         try {
             c = XmlReader.getCollection(path);
             c.setPath(path);
