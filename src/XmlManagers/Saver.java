@@ -20,7 +20,7 @@ public class Saver {
      * @param path путь до файла
      * @throws java.io.FileNotFoundException
      */
-    public static void saveCollection(Collection c, String path) throws java.io.FileNotFoundException {
+    public static void saveCollection(Collection c, String path) throws java.io.FileNotFoundException{
 
         try{
             File newCollection = new File(path);
@@ -30,6 +30,7 @@ public class Saver {
             PrintWriter printWriter = new PrintWriter(newCollection);
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(c, printWriter);
+            printWriter.close();
         }catch (JAXBException e){
             System.out.println("Некорректный файл");
         }catch (FileNotFoundException e){
