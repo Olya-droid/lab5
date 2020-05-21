@@ -4,7 +4,6 @@ import Routes.Collection;
 import XmlManagers.XmlReader;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
@@ -21,14 +20,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        final long start = System.nanoTime();
         Signal.handle(new Signal("INT"), new SignalHandler() {
             public void handle(Signal sig) {
-                System.out.println("Программа завершает работу");
-                //if (Console.Console.HandlerB("Введите Bool: ", Command.boolCheck)) {
-                System.out.format("\nПрограмма работала %f сек.\n", (System.nanoTime() - start) / 1e9f);//ctrl-c
+                System.out.println("Наконец-то эта программа завершается...");//ctrl-c
                 System.exit(0);
-                //}
             }
         });
 
@@ -57,4 +52,6 @@ public class Main {
         bufferReader.close();
     }
 
+    //execute_script resources/test.txt
+    //resources/input.xml
 }
