@@ -29,13 +29,15 @@ public class Execute_script {
 
     public static boolean execute_script(Routes.Collection c, String s2) {
         if(s2 == null | s2.equals("")){
+            ConsoleSourceReader consoleSourceReader = new ConsoleSourceReader();
             while (s2 == null | s2.equals("")) {
                 System.out.println("кажется, вы забыли ввести расположение файла. Где он лежит?");
-                ConsoleSourceReader consoleSourceReader = new ConsoleSourceReader();
                 s2 = consoleSourceReader.getLine();
             }
             System.out.println("спасибо, но в следующий раз введите его в той же строке, что и команду" + "\n");
+            consoleSourceReader.close();
         }
+
         if (theSameExist(s2)){
             System.out.println("\n"+"-ать с рекурсией не надо игр-" +"\n");
             System.out.println("Программа была завершена во избежание разрыва пространственно-временного континуума."+ "\n" +  "\n" + "\n" +"А ещё, кстати:");
@@ -46,11 +48,12 @@ public class Execute_script {
             try {
                 FileSourceReader fileSourceReader = new FileSourceReader(s2);
                 String[] s;
-                s = CommandArgumentSplitter.comArgSplitter(fileSourceReader.getLine());
-                while (fileWork && s != null) {
+                String line;
+                line = fileSourceReader.getLine();
+                while (fileWork && line != null) {
+                    s = CommandArgumentSplitter.comArgSplitter(line);
                     fileWork = Commander.switcher(fileSourceReader, c, s[0], s[1]);
-                    s = CommandArgumentSplitter.comArgSplitter(fileSourceReader.getLine());
-
+                    line = fileSourceReader.getLine();
                 }
                 fileSourceReader.close();
                 usedFiles.clear();
