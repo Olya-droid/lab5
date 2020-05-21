@@ -1,6 +1,5 @@
 import Readers.CommandArgumentSplitter;
 import Readers.ConsoleSourceReader;
-import Readers.FileSourceReader;
 import Routes.Collection;
 import XmlManagers.XmlReader;
 
@@ -9,8 +8,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
-
-import javax.xml.bind.JAXBException;
 
 /**
  * Главный класс, в котором происходит вся магия
@@ -37,7 +34,7 @@ public class Main {
 
         boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
-        Collection c = new Collection();
+        Collection c;
         String path;
         String[] s;
 
@@ -47,13 +44,8 @@ public class Main {
             System.out.println("такого файла там нет, введите другой путь");
             path = bufferReader.getLine()+"";
         }
-        try {
-            c = XmlReader.getCollection(path);
-            c.setPath(path);
-        }catch (FileNotFoundException e){
-            System.out.println("Ты чево наделал................");
-            work = false;
-        }
+        c = XmlReader.getCollection(path);
+        c.setPath(path);
 
         while (work) {
             System.out.print("\n \n" + "Введите, что вам надо: ");
