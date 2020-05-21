@@ -28,6 +28,7 @@ public class Execute_script {
      */
 
     public static boolean execute_script(Routes.Collection c, String s2) {
+
         if(s2 == null | s2.equals("")){
             ConsoleSourceReader consoleSourceReader = new ConsoleSourceReader();
             while (s2 == null | s2.equals("")) {
@@ -40,9 +41,7 @@ public class Execute_script {
 
         if (theSameExist(s2)){
             System.out.println("\n"+"-ать с рекурсией не надо игр-" +"\n");
-            System.out.println("Программа была завершена во избежание разрыва пространственно-временного континуума."+ "\n" +  "\n" + "\n" +"А ещё, кстати:");
-            fileWork = false;
-            return fileWork;
+            System.out.println("Рекурсивное чтение файла было завершено во избежание разрыва пространственно-временного континуума.");
         } else {
             usedFiles.add(s2);
             try {
@@ -70,6 +69,7 @@ public class Execute_script {
             }
         }
         return fileWork;
+
     }
 
     /**
