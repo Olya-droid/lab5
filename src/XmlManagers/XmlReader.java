@@ -28,16 +28,12 @@ public class XmlReader {
             JAXBContext jaxbContext = JAXBContext.newInstance(Collection.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             BufferedReader bufferedReader = new BufferedReader(new FileReader(input));
-            bufferedReader.close();
             return (Collection) unmarshaller.unmarshal(bufferedReader);
         }catch (JAXBException e){
             System.out.println("Некорректный файл");
             return null;
         }catch (FileNotFoundException e){
             System.out.println(e.getMessage());
-            return null;
-        } catch (IOException e) {
-            System.out.println("ошибка закрытия потока чтения");
             return null;
         }
 
