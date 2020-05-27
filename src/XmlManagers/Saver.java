@@ -2,7 +2,6 @@ package XmlManagers;
 
 import Exceptions.FileNotFoundException;
 import Routes.Collection;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -20,7 +19,7 @@ public class Saver {
      * @param path путь до файла
      * @throws java.io.FileNotFoundException
      */
-    public static void saveCollection(Collection c, String path) throws java.io.FileNotFoundException{
+    public static void saveCollection(Collection c, String path) throws java.io.FileNotFoundException {
 
         try{
             File newCollection = new File(path);
@@ -30,12 +29,10 @@ public class Saver {
             PrintWriter printWriter = new PrintWriter(newCollection);
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(c, printWriter);
-            printWriter.close();
-        }catch (JAXBException e){
+        } catch (JAXBException e){
             System.out.println("Некорректный файл");
         }catch (FileNotFoundException e){
             System.out.println(e.getMessage());
         }
     }
-
 }
