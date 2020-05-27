@@ -2,9 +2,10 @@ package Routes;
 
 import Generators.DateGenerator;
 import Generators.IDGenerator;
-import java.util.ArrayList;
-import java.time.LocalDate;
+
 import javax.xml.bind.annotation.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
