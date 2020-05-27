@@ -49,16 +49,12 @@ public class Main {
             System.out.println("Ты чево наделал................");
             work = false;
         }
-        try {
             while (work) {
                 System.out.print("\n \n" + "Введите, что вам надо: ");
                 s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
+                if (s[0] == null) continue;
                 work = Commands.Commander.switcher(bufferReader, c, s[0], s[1]);
             }
-        } catch (NullPointerException e){
-            System.out.println(  " Контрлдешное завершение программы" );
-        }
-
         System.out.println("\n" + "Наконец-то эта программа завершается...");
         bufferReader.close();
     }
