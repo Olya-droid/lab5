@@ -1,10 +1,8 @@
 package Commands;
 
-import Exceptions.FileNotFoundException;
 import Readers.CommandArgumentSplitter;
 import Readers.ConsoleSourceReader;
 import Readers.FileSourceReader;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -36,7 +34,6 @@ public class Execute_script {
                 s2 = consoleSourceReader.getLine();
             }
             System.out.println("спасибо, но в следующий раз введите его в той же строке, что и команду" + "\n");
-            consoleSourceReader.close();
         }
 
         if (theSameExist(s2)){
@@ -57,11 +54,8 @@ public class Execute_script {
                 fileSourceReader.close();
                 usedFiles.clear();
                 System.out.println("Завершение скрипта");
-            } catch (FileNotFoundException e) {
-                System.out.println(e.getMessage());
-                usedFiles.clear();
             } catch (IOException e) {
-                System.out.println("неправильный формат ввода расположения файла");
+                System.out.println("ошибка чтения файла");
                 usedFiles.clear();
             } catch (Exception e) {
                 System.out.println("непредвиденный конец файла");
