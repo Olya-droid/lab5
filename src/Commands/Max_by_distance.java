@@ -25,4 +25,3 @@ public class Max_by_distance {
         System.out.println("Коллекция пуста как моё сердце");
 }
 }
-
