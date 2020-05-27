@@ -32,7 +32,7 @@ public class Main {
 
         boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
-        Collection c = null();
+        Collection c = null;
         String path;
         String[] s;
 
