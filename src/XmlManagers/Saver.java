@@ -2,11 +2,12 @@ package XmlManagers;
 
 import Exceptions.FileNotFoundException;
 import Routes.Collection;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
-import java.io.PrintWriter;
 import java.io.File;
+import java.io.PrintWriter;
 
 /**
  * Класс - сохранщик
