@@ -2,7 +2,6 @@ package Commands;
 
 import Routes.Collection;
 import Routes.Route;
-
 import java.util.Arrays;
 
 /**
@@ -16,7 +15,7 @@ public class Print_field_descending_distance {
          * @param c
          */
         public static void print_field_descending_distance (Collection c) {
-        if (!c.Routes.isEmpty()) {
+                if (!c.Routes.isEmpty()) {
                 float[] array = new float[c.Routes.size()]; // создаётся массив размером с коллекцию
                 int i = 0;
                 for (Route r : c.Routes) {
@@ -28,6 +27,7 @@ public class Print_field_descending_distance {
                 for (i = c.Routes.size() - 1; i >= 0; i--) {
                         System.out.println(array[i]); // массив выводится в обратном порядке
                 }
-        }else System.out.println("Коллекция пуста, в отличие от моего рабочего стола.");
+        }
+                else System.out.println("Коллекция пуста, в отличие от моего рабочего стола.");
 }
 }
