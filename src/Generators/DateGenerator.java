@@ -14,5 +14,4 @@ public class DateGenerator {
     public static LocalDate generateCurrentDate() {
         return LocalDate.now();
     }
-
 }
