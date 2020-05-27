@@ -32,22 +32,21 @@ public class Main {
 
         boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
-        Collection c = new Collection();
+        Collection c = null();
         String path;
         String[] s;
 
-        System.out.println("\n \n" + "Введите расположение файла с коллекцией: ");
-        path = bufferReader.getLine()+"";
-        while (!new File(path).exists()){
-            System.out.println("такого файла там нет, введите другой путь");
-            path = bufferReader.getLine()+"";
-        }
-        try {
+        System.out.println("\n \n Добро пожаловать!");
+
+        while(c == null){
+            System.out.println("Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
+            path = bufferReader.getLine() + "";
+            if (path.equals("")){
+                path = "resources/input.xml";
+                System.out.println("Вы начали работу с коллекцией по умолчанию. Если хотите увидеть ее элементы, введите \"show\"");
+            }
             c = XmlReader.getCollection(path);
             c.setPath(path);
-        }catch (FileNotFoundException e){
-            System.out.println("Ты чево наделал................");
-            work = false;
         }
             while (work) {
                 System.out.print("\n \n" + "Введите, что вам надо: ");
