@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * Поле класса Route 
+ * Поле класса Route
  */
 @XmlRootElement
 public class Coordinates {
