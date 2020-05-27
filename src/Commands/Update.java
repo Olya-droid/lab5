@@ -4,7 +4,6 @@ import Routes.Collection;
 import Routes.Coordinates;
 import Routes.Location;
 import Routes.Route;
-
 import java.io.IOException;
 
 /**
@@ -56,11 +55,9 @@ public class Update {
             changedFrom =false;
             changedTo = false;
             changedDist = false;
-
         }
 
-
-
+        
     /**
      * Метод изменения имени в элемент
      *
