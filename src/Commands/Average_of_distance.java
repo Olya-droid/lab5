@@ -27,4 +27,3 @@ public class Average_of_distance {
         System.out.println("Коллекция пуста как банка кофе, купленая в начале выполнения этой работы");
     }
 }
-
