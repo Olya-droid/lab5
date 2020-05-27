@@ -178,7 +178,7 @@ public class Draw {
 
         } else if(rand>0) {
             System.out.println(
-                    "                 *     ,MMM8&&&.            *\n" +
+                            "             *     ,MMM8&&&.            *\n" +
                             "                  MMMM88&&&&&    .\n" +
                             "                 MMMM88&&&&&&&\n" +
                             "     *           MMM88&&&&&&&&\n" +
