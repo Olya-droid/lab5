@@ -17,11 +17,9 @@ public class Checker {
         try {
             return Integer.parseInt(s);
         }catch (Exception e) {
-         //   System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
     }
-
 
     /**
      * Проверка на Long
@@ -35,7 +33,6 @@ public class Checker {
         try {
             return Long.parseLong(s);
         }catch (Exception e) {
-       //     System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
 
@@ -52,10 +49,8 @@ public class Checker {
         try {
             return Float.parseFloat(s);
         }catch (Exception e) {
-    //        System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
-
     }
 
     /**
@@ -70,11 +65,7 @@ public class Checker {
         try {
             return Double.parseDouble(s);
         }catch (Exception e) {
-   //         System.out.println("Ошибка ввода. Ну, с кем не бывает? Попробуйте еще раз");
             return null;
         }
-
     }
-
-
 }
