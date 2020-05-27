@@ -1,14 +1,11 @@
 import Readers.CommandArgumentSplitter;
 import Readers.ConsoleSourceReader;
-import Readers.FileSourceReader;
 import Routes.Collection;
 import XmlManagers.XmlReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
-import javax.xml.bind.JAXBException;
+
+import java.io.IOException;
 
 /**
  * Главный класс, в котором происходит вся магия
