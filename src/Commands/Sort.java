@@ -15,5 +15,4 @@ public class Sort {
     public static void  sort (Routes.Collection c) {
            Collections.sort(c.Routes);
         }
-
 }
