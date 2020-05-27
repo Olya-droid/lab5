@@ -15,8 +15,8 @@ public class Show {
     public static void show (Collection c) {
         if (c.Routes.size() == 0) {
             System.out.println("Коллекция пуста, милорд");
-        } else {
-
+        } 
+        else {
             for (Route r : c.Routes) {
                 System.out.println("  " + r.toString());
             }
