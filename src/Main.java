@@ -10,13 +10,11 @@ import java.io.IOException;
 /**
  * Главный класс, в котором происходит вся магия
  */
-
 public class Main {
 
     /**
      * Главный метод, в котором происходит вся магия
      */
-
     public static void main(String[] args) throws IOException {
         Signal.handle(new Signal("INT"), new SignalHandler() {
             public void handle(Signal sig) {
