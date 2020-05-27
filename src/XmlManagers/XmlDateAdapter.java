@@ -1,7 +1,7 @@
 package XmlManagers;
 
-import java.time.LocalDate;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
+import java.time.LocalDate;
 
 /**
  * Класс для адаптации даты к xml
