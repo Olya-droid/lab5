@@ -3,13 +3,11 @@ import Readers.ConsoleSourceReader;
 import Readers.FileSourceReader;
 import Routes.Collection;
 import XmlManagers.XmlReader;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
-
 import javax.xml.bind.JAXBException;
 
 /**
@@ -48,14 +46,13 @@ public class Main {
             c = XmlReader.getCollection(path);
             c.setPath(path);
         }
-            while (work) {
-                System.out.print("\n \n" + "Введите, что вам надо: ");
-                s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
-                if (s == null) continue;
-                work = Commands.Commander.switcher(bufferReader, c, s[0], s[1]);
-            }
+        while (work) {
+            System.out.print("\n \n" + "Введите, что вам надо: ");
+            s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
+            if (s == null) continue;
+            work = Commands.Commander.switcher(bufferReader, c, s[0], s[1]);
+        }
         System.out.println("\n" + "Наконец-то эта программа завершается...");
         bufferReader.close();
     }
-
 }
