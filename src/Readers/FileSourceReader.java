@@ -1,14 +1,13 @@
 package Readers;
 
 import Exceptions.FileNotFoundException;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.File;
 
 /**
- * Класс для чтения из файла 
+ * Класс для чтения из файла
  */
 
 public class FileSourceReader extends Reader {
@@ -19,7 +18,7 @@ public class FileSourceReader extends Reader {
             this.bufferedReader = new BufferedReader(new FileReader(path));
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());;
-        }
+        } 
     }
 
     @Override
@@ -35,5 +34,4 @@ public class FileSourceReader extends Reader {
             return null;
         }
     }
-
 }
