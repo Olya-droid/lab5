@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 /**
- * Класс, хранимый в Collection 
+ * Класс, хранимый в Collection
  */
 @XmlRootElement
 public class Route implements Comparable<Route>{
