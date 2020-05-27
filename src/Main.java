@@ -51,7 +51,7 @@ public class Main {
             while (work) {
                 System.out.print("\n \n" + "Введите, что вам надо: ");
                 s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
-                if (s[0] == null) continue;
+                if (s == null) continue;
                 work = Commands.Commander.switcher(bufferReader, c, s[0], s[1]);
             }
         System.out.println("\n" + "Наконец-то эта программа завершается...");
