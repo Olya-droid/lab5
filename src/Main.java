@@ -42,7 +42,7 @@ public class Main {
             System.out.println("Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
             path = bufferReader.getLine() + "";
             if (path.equals("")){
-                path = "resources/input.xml";
+                path = "./resources/input.xml";
                 System.out.println("Вы начали работу с коллекцией по умолчанию. Если хотите увидеть ее элементы, введите \"show\"");
             }
             c = XmlReader.getCollection(path);
