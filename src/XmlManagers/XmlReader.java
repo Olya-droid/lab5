@@ -1,6 +1,6 @@
 package XmlManagers;
 
-import Exceptions.FileNotFoundException;
+import java.io.FileNotFoundException;
 import Routes.Collection;
 
 import javax.xml.bind.JAXBContext;
@@ -18,9 +18,8 @@ public class XmlReader {
      * Метод для получения коллекции из файла xml
      * @param path путь
      * @return Коллекция  (Collection)
-     * @throws java.io.FileNotFoundException
      */
-    public static Collection getCollection(String path) throws java.io.FileNotFoundException {
+    public static Collection getCollection(String path) {
 
         try{
             File input = new File(path);
@@ -31,8 +30,8 @@ public class XmlReader {
         }catch (JAXBException e){
             System.out.println("Некорректный файл");
             return null;
-        }catch (FileNotFoundException e){
-            System.out.println(e.getMessage());
+        }catch (FileNotFoundException | NullPointerException e){
+            System.out.println("Кажется такого файла там нет");
             return null;
         }
     }
