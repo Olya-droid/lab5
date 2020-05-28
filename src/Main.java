@@ -5,16 +5,19 @@ import XmlManagers.XmlReader;
 import sun.misc.Signal;
 import sun.misc.SignalHandler;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
  * Главный класс, в котором происходит вся магия
  */
+
 public class Main {
 
     /**
      * Главный метод, в котором происходит вся магия
      */
+
     public static void main(String[] args) throws IOException {
         Signal.handle(new Signal("INT"), new SignalHandler() {
             public void handle(Signal sig) {
@@ -39,7 +42,9 @@ public class Main {
                 System.out.println("Вы начали работу с коллекцией по умолчанию. Если хотите увидеть ее элементы, введите \"show\"");
             }
             c = XmlReader.getCollection(path);
-            c.setPath(path);
+            if (new File(path).exists()) {
+               c.setPath(path);
+            }
         }
         while (work) {
             System.out.print("\n \n" + "Введите, что вам надо: ");
@@ -51,3 +56,4 @@ public class Main {
         bufferReader.close();
     }
 }
+
