@@ -1,6 +1,6 @@
 package Readers;
 
-import Exceptions.FileNotFoundException;
+import java.io.FileNotFoundException;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -13,12 +13,12 @@ import java.io.IOException;
 
 public class FileSourceReader extends Reader {
 
-    public FileSourceReader(String path) throws java.io.FileNotFoundException {
+    public FileSourceReader(String path) {
         try {
             this.bufferedReader = new BufferedReader(new FileReader(new File(path)));
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());;
-        } 
+        } catch (FileNotFoundException | NullPointerException e) {
+            System.out.println("Ошибка чтения файла");;
+        }
     }
 
     @Override
