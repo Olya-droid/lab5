@@ -1,11 +1,12 @@
 package XmlManagers;
 
-import Exceptions.FileNotFoundException;
+import java.io.FileNotFoundException;
 import Routes.Collection;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.SchemaOutputResolver;
 import java.io.File;
 import java.io.PrintWriter;
 
@@ -18,9 +19,8 @@ public class Saver {
      * Метод для сохранения коллекции в файл
      * @param c коллекция
      * @param path путь до файла
-     * @throws java.io.FileNotFoundException
      */
-    public static void saveCollection(Collection c, String path) throws java.io.FileNotFoundException {
+    public static void saveCollection(Collection c, String path) {
 
         try{
             File newCollection = new File(path);
@@ -33,7 +33,9 @@ public class Saver {
         } catch (JAXBException e){
             System.out.println("Некорректный файл");
         }catch (FileNotFoundException e){
-            System.out.println(e.getMessage());
+            System.out.println("Кажется, такого файла нам нет");
+        }catch (NullPointerException e){
+            System.out.println("Ошибка чтения файла");
         }
     }
 }
