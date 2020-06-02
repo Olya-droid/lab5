@@ -51,7 +51,9 @@ public class Main {
             }
             c = XmlReader.getCollection(path);
             if (new File(path).exists()) {
-               c.setPath(path);
+               try{
+                   c.setPath(path);
+               } catch (NullPointerException ignored){}
             }
         }
         while (work) {
