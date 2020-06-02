@@ -42,7 +42,7 @@ public class Main {
         }catch (ArrayIndexOutOfBoundsException ignored){}
 
         while(c == null){
-            System.out.println("Такого файла не существует. Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
+            System.out.println("Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
             path = bufferReader.getLine() + "";
             if (path.equals("")){
                 path = "resources/input.xml";
