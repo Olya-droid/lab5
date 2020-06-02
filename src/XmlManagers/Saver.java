@@ -25,6 +25,10 @@ public class Saver {
         try{
             File newCollection = new File(path);
             if (!newCollection.exists()) throw new FileNotFoundException();
+            if (!newCollection.canWrite()) {
+                System.out.println("Запись в файл невозможна. Сделайте что-нибудь, если хотите сохранить именно в этот файл.");
+                return;
+            }
             JAXBContext jaxbContext = JAXBContext.newInstance(Collection.class);
             Marshaller marshaller = jaxbContext.createMarshaller();
             PrintWriter printWriter = new PrintWriter(newCollection);
