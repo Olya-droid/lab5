@@ -6,6 +6,7 @@ import sun.misc.Signal;
 import sun.misc.SignalHandler;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -19,6 +20,7 @@ public class Main {
      */
 
     public static void main(String[] args) throws IOException {
+
         Signal.handle(new Signal("INT"), new SignalHandler() {
             public void handle(Signal sig) {
                 System.out.println("\n" + "Контрлцешное завершение программы");
@@ -29,33 +31,32 @@ public class Main {
         boolean work = true; // переменная, отвечающая за выход из программы. Как только она станет false, программа завершается
         ConsoleSourceReader bufferReader = new ConsoleSourceReader();
         Collection c = null;
-        String path;
+        String path = null;
         String[] s;
 
         System.out.println("\n \n Добро пожаловать!");
-        
+
         try{
             path = args[0];
             c = XmlReader.getCollection(path);
-            if (new File(path).exists()) {
-                c.setPath(path);
-            }
         }catch (ArrayIndexOutOfBoundsException ignored){}
 
         while(c == null){
-            System.out.println("Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
+            System.out.println("Такого файла не существует. Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
             path = bufferReader.getLine() + "";
             if (path.equals("")){
                 path = "resources/input.xml";
                 System.out.println("Вы начали работу с коллекцией по умолчанию. Если хотите увидеть ее элементы, введите \"show\"");
             }
             c = XmlReader.getCollection(path);
-            if (new File(path).exists()) {
-               try{
-                   c.setPath(path);
-               } catch (NullPointerException ignored){}
-            }
         }
+
+        try{
+            if (new File(path).exists()) {
+                c.setPath(path);
+            }
+        } catch (NullPointerException ignored){}
+
         while (work) {
             System.out.print("\n \n" + "Введите, что вам надо: ");
             s = CommandArgumentSplitter.comArgSplitter(bufferReader.getLine());
