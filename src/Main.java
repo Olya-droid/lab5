@@ -33,6 +33,14 @@ public class Main {
         String[] s;
 
         System.out.println("\n \n Добро пожаловать!");
+        
+        try{
+            path = args[0];
+            c = XmlReader.getCollection(path);
+            if (new File(path).exists()) {
+                c.setPath(path);
+            }
+        }catch (ArrayIndexOutOfBoundsException ignored){}
 
         while(c == null){
             System.out.println("Введите расположение файла с коллекцией или нажмите Enter, чтобы начать работу с дефолтной коллекцией: ");
