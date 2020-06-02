@@ -23,6 +23,10 @@ public class XmlReader {
 
         try{
             File input = new File(path);
+            if (!input.canRead()) {
+                System.out.println("Невозможно прочитать файл.");
+                return null;
+            } 
             JAXBContext jaxbContext = JAXBContext.newInstance(Collection.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             BufferedReader bufferedReader = new BufferedReader(new FileReader(input));
