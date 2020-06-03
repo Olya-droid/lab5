@@ -16,7 +16,9 @@ public class FileSourceReader extends Reader {
     public FileSourceReader(String path) {
         try {
             this.bufferedReader = new BufferedReader(new FileReader(new File(path)));
-        } catch (FileNotFoundException | NullPointerException e) {
+        } catch (FileNotFoundException e) {
+            System.out.println("Кажется, такого файла там нет");
+        } catch (NullPointerException e){
             System.out.println("Ошибка чтения файла");
         }
     }
@@ -29,8 +31,8 @@ public class FileSourceReader extends Reader {
                 System.out.print(s + "\n");
             }
             return s;
-        } catch(IOException e){
-            System.out.println("Ввод неожиданно прервался");
+        } catch(IOException | NullPointerException e){
+            System.out.println("Чтение было прервано");
             return null;
         }
     }
