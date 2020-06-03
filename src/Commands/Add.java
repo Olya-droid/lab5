@@ -107,7 +107,7 @@ public class Add {
      * @param c      коллекция
      * @param route  объект
      */
-    protected static void addFrom(Reader reader, Collection c, Route route) throws IOException {
+    protected static void addFrom(Reader reader, Collection c, Route route){
         System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
 
         String s = reader.getLine()+"";
@@ -123,6 +123,8 @@ public class Add {
             System.out.println("Неправильный тип. location From (X) должно быть типа long." + "\n Попробуем ещё разок!");
             return;
         }
+
+
         System.out.print("double y = ");
         double locationFromY;
         s = reader.getLine()+"";
@@ -148,7 +150,8 @@ public class Add {
         route.setFrom(new Location(locationFromX, locationFromY, locationFromName));
         Add.hasFrom = true;
     }
-    
+
+
     /**
      * Метод добавления поля to в элемент
      *
@@ -202,7 +205,7 @@ public class Add {
         System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
         String s = reader.getLine()+"";
         if (s.equals("")) {
-            System.out.println("Установлено значение distance = null. Такие вот дела.");
+            System.out.println("Теперь distance = null");
             Add.hasDist = true;
             return;
         }
