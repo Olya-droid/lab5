@@ -1,7 +1,6 @@
 package Commands;
 
-import java.io.FileNotFoundException;
-import static XmlManagers.Saver.saveCollection;
+import static XmlManagers.XMLSaver.saveCollection;
 
 /**
  * Команда "Сохрани мою речь"
@@ -12,9 +11,8 @@ public class Save {
         /**
          * Метод для сохранения коллекции в файл
          * @param c коллекция
-         * @throws FileNotFoundException
          */
-        public static void save (Routes.Collection c) throws FileNotFoundException{
+        public static void save (Routes.Collection c) {
                 saveCollection(c, c.getPath());
         }
 }
