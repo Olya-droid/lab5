@@ -16,7 +16,7 @@ public class ConsoleSourceReader extends Reader{
     public String getLine(){
         try {
             return bufferedReader.readLine();
-        } catch(IOException e){
+        } catch(IOException | NullPointerException e){
             System.out.println("Ввод неожиданно прервался");
             return null;
         }
