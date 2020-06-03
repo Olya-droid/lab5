@@ -19,10 +19,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Signal.handle(new Signal("INT"), new SignalHandler() {
-            public void handle(Signal sig) {
-                System.out.println("\n" + "Контрлцешное завершение программы");
-                System.exit(0);
+        Signal.handle(new Signal("INT"), sig ->  {
+            System.out.println("\n" + "Контрлцешное завершение программы");
+            System.exit(0);
             }
         });
 
