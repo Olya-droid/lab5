@@ -2,7 +2,6 @@ package Commands;
 
 import Routes.Collection;
 import Readers.*;
-import java.io.IOException;
 
 /**
  * Класс, соотносящий введённую команду с доступными командами
@@ -15,9 +14,8 @@ public class Commander {
      * @param s1 команда
      * @param s2 данные, читаемые в одной строке с командой
      * @return возвращает true, если не была введена команда exit
-     * @throws IOException
      */
-    public  static boolean switcher(Reader reader, Collection c, String s1, String s2) throws IOException {
+    public  static boolean switcher(Reader reader, Collection c, String s1, String s2){
         boolean historyCheck = true;
         switch (s1.toLowerCase()) {
             case ("help"):
