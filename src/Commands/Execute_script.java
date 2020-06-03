@@ -3,7 +3,8 @@ package Commands;
 import Readers.CommandArgumentSplitter;
 import Readers.ConsoleSourceReader;
 import Readers.FileSourceReader;
-import java.io.IOException;
+
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -36,31 +37,43 @@ public class Execute_script {
             System.out.println("спасибо, но в следующий раз введите его в той же строке, что и команду" + "\n");
         }
 
+         if (!getFileExtension(new File(s2)).equals("txt") && !getFileExtension(new File(s2)).equals("")){
+            ConsoleSourceReader consoleSourceReader = new ConsoleSourceReader();
+            System.out.println("Файлы с расширением отличным от \"txt\" могуты быть прочитаны некорректно. Вы уверены, что хотите продолжить? ");
+            boolean answerIsIncorrect = true;
+            while (answerIsIncorrect){
+                System.out.print("Введите \"yes\", если хотите продолжить работу с введенным выше файлом, \"no\", если хотите вернуться в меню ввода команд: ");
+                String answer = consoleSourceReader.getLine();
+                answer = answer.trim().toLowerCase();
+                switch(answer) {
+                    case ("yes"):
+                        answerIsIncorrect = false;
+                        break;
+                    case ("no"):
+                        return true;
+                    default:
+                        System.out.print("Ответ введен некорректно. ");
+                }
+            }
+        }
+        
         if (theSameExist(s2)){
             System.out.println("\n"+"-ать с рекурсией не надо игр-" +"\n");
             System.out.println("Рекурсивное чтение файла было завершено во избежание разрыва пространственно-временного континуума.");
         } else {
             usedFiles.add(s2);
-            try {
-                FileSourceReader fileSourceReader = new FileSourceReader(s2);
-                String[] s;
-                String line;
+            FileSourceReader fileSourceReader = new FileSourceReader(s2);
+            String[] s;
+            String line;
+            line = fileSourceReader.getLine();
+            while (fileWork && line != null) {
+                s = CommandArgumentSplitter.comArgSplitter(line);
+                fileWork = Commander.switcher(fileSourceReader, c, s[0], s[1]);
                 line = fileSourceReader.getLine();
-                while (fileWork && line != null) {
-                    s = CommandArgumentSplitter.comArgSplitter(line);
-                    fileWork = Commander.switcher(fileSourceReader, c, s[0], s[1]);
-                    line = fileSourceReader.getLine();
-                }
-                fileSourceReader.close();
-                usedFiles.clear();
-                System.out.println("Завершение скрипта");
-            } catch (IOException e) {
-                System.out.println("ошибка чтения файла");
-                usedFiles.clear();
-            } catch (Exception e) {
-                System.out.println("непредвиденный конец файла");
-                usedFiles.clear();
             }
+            fileSourceReader.close();
+            usedFiles.clear();
+            System.out.println("Завершение скрипта");
         }
         return fileWork;
 
@@ -75,5 +88,17 @@ public class Execute_script {
         for (String s: usedFiles) if (s.equals(s2)) return true;
         return false;
     }
+    
+      /**
+     * Определение расширение файла file
+     * @param file файл
+     * @return раширение файла file
+     */
+    private static String getFileExtension(File file) {
+        String fileName = file.getName();
+        if (fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        else return "";
+    }  
 
 }
