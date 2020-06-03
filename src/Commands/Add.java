@@ -19,7 +19,6 @@ public class Add {
      *
      * @param reader объект - считыватель
      * @param c      коллекция
-     * @throws NullPointerException, IOException
      */
     public static void add(Reader reader, Collection c){
         Route route = new Route();
