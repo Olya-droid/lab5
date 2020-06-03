@@ -125,12 +125,12 @@ public class Update {
      * @param c      коллекция
      * @param route  объект
      */
-    protected static void changeFrom(Reader reader, Collection c, Route route) {
+   protected static void changeFrom(Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
-
         String s = reader.getLine()+"";
         if (s.equals("") ) {
-            System.out.println("Введена пустая строка. Не надо так.");
+            System.out.println("LocationFrom = null.");
+            Update.changedFrom = true;
             return;
         }
         long locationFromX;
@@ -142,23 +142,29 @@ public class Update {
         }
         System.out.print("double y = ");
         double locationFromY;
+        s = reader.getLine()+"";
+        if (s.equals("") ) {
+            System.out.println("LocationFrom = null.");
+            Update.changedFrom = true;
+            return;
+        }
         try {
-            locationFromY = Checker.doubleChecker(reader.getLine());
+            locationFromY = Checker.doubleChecker(s);
         } catch (NullPointerException e) {
             System.out.println("Неправильный тип. location From (Y) должно быть типа double." + "\n Попробуем ещё разок!");
             return;
         }
 
         System.out.print("Имя откуда:  ");
-        String locationFromName = reader.getLine();
-        if (locationFromName.equals("") || locationFromName == null) {
-            System.out.println("Пустая строка ни к чему не приведёт. Пока ты смотришь в пустую строку, пустая строка смотрит в тебя...");
+        String locationFromName = reader.getLine()+"";
+        if (locationFromName.equals("")) {
+            System.out.println("LocationFrom = null.");
+            Update.changedFrom = true;
             return;
         }
         route.setFrom(new Location(locationFromX, locationFromY, locationFromName));
         Update.changedFrom = true;
     }
-
 
     /**
      * Метод изменения поля to в элемент
