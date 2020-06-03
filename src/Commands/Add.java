@@ -107,12 +107,13 @@ public class Add {
      * @param c      коллекция
      * @param route  объект
      */
-    protected static void addFrom(Reader reader, Collection c, Route route){
+    protected static void addFrom(Reader reader, Collection c, Route route) throws IOException {
         System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
 
         String s = reader.getLine()+"";
         if (s.equals("") ) {
-            System.out.println("Введена пустая строка. Не надо так.");
+            System.out.println("LocationFrom = null.");
+            Add.hasFrom = true;
             return;
         }
         long locationFromX;
@@ -124,8 +125,14 @@ public class Add {
         }
         System.out.print("double y = ");
         double locationFromY;
+        s = reader.getLine()+"";
+        if (s.equals("") ) {
+            System.out.println("LocationFrom = null.");
+            Add.hasFrom = true;
+            return;
+        }
         try {
-            locationFromY = Checker.doubleChecker(reader.getLine());
+            locationFromY = Checker.doubleChecker(s);
         } catch (NullPointerException e) {
             System.out.println("Неправильный тип. location From (Y) должно быть типа double." + "\n Попробуем ещё разок!");
             return;
@@ -134,14 +141,14 @@ public class Add {
         System.out.print("Имя откуда:  ");
         String locationFromName = reader.getLine()+"";
         if (locationFromName.equals("")) {
-            System.out.println("Пустая строка ни к чему не приведёт. Пока ты смотришь в пустую строку, пустая строка смотрит в тебя...");
+            System.out.println("LocationFrom = null.");
+            Add.hasFrom = true;
             return;
         }
         route.setFrom(new Location(locationFromX, locationFromY, locationFromName));
         Add.hasFrom = true;
     }
-
-
+    
     /**
      * Метод добавления поля to в элемент
      *
