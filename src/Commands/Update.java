@@ -213,7 +213,8 @@ public class Update {
         System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
         String s = reader.getLine()+"";
         if (s.equals("")) {
-            System.out.println("Введена пустая строка. Не надо так.");
+            System.out.println("Теперь distance = null. Надеемся, вы именно этого и добивались.");
+            Update.changedDist = true;
             return;
         }
         float distance;
