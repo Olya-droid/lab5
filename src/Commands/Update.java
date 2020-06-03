@@ -5,26 +5,24 @@ import Routes.Coordinates;
 import Routes.Location;
 import Routes.Route;
 
-import java.io.IOException;
-
 /**
  * Команда  "ПРАВКИ!"
  */
 public class Update {
-        static String description ="update id {element} : обновить значение элемента коллекции, id которого равен заданному.";
+    static String description ="update id {element} : обновить значение элемента коллекции, id которого равен заданному.";
     static boolean changedName = false;  // показывает, было ли изменено имя элемента
     static boolean changedCoordinates = false; // показывает, было ли изменено поле coordinates
     static boolean changedFrom = false; //показывает, было ли изменено поле from
     static boolean changedTo = false; // показывает, было ли изменено поле to
     static boolean changedDist = false; // показывает, было ли изменено поле distance
+        
     /**
      * Метод для изменения значений элемента по id
      * @param reader объект - считыватель
      * @param c коллекция
      * @param s2 id
-     * @throws IOException
      */
-        public static void update (Reader reader, Routes.Collection c, String s2) throws IOException {
+        public static void update (Reader reader, Routes.Collection c, String s2){
                 if (s2==null | s2.equals("")) {
                         System.out.println("кажется вы забыли ввести айди");
                         return;
@@ -37,9 +35,9 @@ public class Update {
                 }
 
                int index =  c.Routes.indexOf(r);
-                Route route = new Route();
+               Route route = new Route();
 
-                System.out.print("\n" +"Давайте попробуем изменить элемент по введённому айди." + "\n" +
+            System.out.print("\n" +"Давайте попробуем изменить элемент по введённому айди." + "\n" +
                         "Раньше его звали \""+ c.Routes.get(index).getName() );
             while (!changedName) changeName(reader, route);
                 System.out.print("\n" +"Раньше координаты были  "+  c.Routes.get(index).getCoordinates() );
@@ -52,31 +50,27 @@ public class Update {
                 System.out.print("\n" +"Раньше Distance было "+c.Routes.get(index).getDistance());
             while (!changedDist) changeDist(reader, route);
 
-            route.setCreationDate(c.Routes.get(index).getCreationDate());
+			route.setCreationDate(c.Routes.get(index).getCreationDate());
             Remove_by_id.remove_by_id(c,s2);
             route.setId(id);
-
             c.Routes.add(route);
-                System.out.println("\n" +"Вы достигли успеха в замене элемента по айди!");
 
+            System.out.println("\n" +"Вы достигли успеха в замене элемента по айди!");
             changedName = false;
             changedCoordinates = false;
             changedFrom =false;
             changedTo = false;
             changedDist = false;
-
         }
 
-
-
+        
     /**
      * Метод изменения имени в элемент
      *
      * @param reader объект - считыватель
      * @param route  объект
-     * @throws IOException
      */
-    protected static void changeName(Reader reader, Route route) throws IOException {
+    protected static void changeName(Reader reader, Route route) {
         System.out.print( "\n" + "Как вы хотите, чтобы его звали?  ");
         String name = reader.getLine()+"";
         if (name.equals("") ) {
@@ -92,9 +86,8 @@ public class Update {
      *
      * @param reader объект - считыватель
      * @param route  объект
-     * @throws IOException
      */
-    protected static void changeCoordinates(Reader reader, Route route) throws IOException {
+    protected static void changeCoordinates(Reader reader, Route route){
         System.out.print("\n" + "Координаты, пожалуйста." + "\n" + "int X = ");
         String s = reader.getLine()+"";
         if (s.equals("") ) {
@@ -135,9 +128,8 @@ public class Update {
      *
      * @param reader объект - считыватель
      * @param route  объект
-     * @throws IOException
      */
-    protected static void changeFrom(Reader reader, Route route) throws IOException {
+    protected static void changeFrom(Reader reader, Route route) {
         System.out.print("\n" + "Откуда? (from)" + "\n" + "long x = ");
 
         String s = reader.getLine()+"";
@@ -185,9 +177,8 @@ public class Update {
      *
      * @param reader объект - считыватель
      * @param route  объект
-     * @throws IOException
      */
-    protected static void changeTo(Reader reader, Route route) throws IOException {
+    protected static void changeTo(Reader reader, Route route) {
         System.out.print("\n" + "Куда? (to)" + "\n" + "long x = ");
         String s = reader.getLine()+"";
         if (s.equals("") ) {
@@ -227,9 +218,8 @@ public class Update {
      *
      * @param reader объект - считыватель
      * @param route  объект
-     * @throws IOException
      */
-    protected static void changeDist(Reader reader, Route route) throws IOException {
+    protected static void changeDist(Reader reader, Route route) {
         System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
         String s = reader.getLine()+"";
         if (s.equals("")) {
