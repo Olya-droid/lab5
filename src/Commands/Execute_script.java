@@ -39,7 +39,7 @@ public class Execute_script {
 
          if (!getFileExtension(new File(s2)).equals("txt") && !getFileExtension(new File(s2)).equals("")){
             ConsoleSourceReader consoleSourceReader = new ConsoleSourceReader();
-            System.out.println("Файлы с расширением отличным от \"txt\" могуты быть прочитаны некорректно. Вы уверены, что хотите продолжить? ");
+            System.out.println("Файлы с расширением, отличным от \"txt\", могут быть прочитаны некорректно. Вы уверены, что хотите продолжить? ");
             boolean answerIsIncorrect = true;
             while (answerIsIncorrect){
                 System.out.print("Введите \"yes\", если хотите продолжить работу с введенным выше файлом, \"no\", если хотите вернуться в меню ввода команд: ");
