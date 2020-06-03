@@ -13,15 +13,20 @@ public class Max_by_distance {
          * @param c коллекция
          */
         public static void  max_by_distance (Collection c){
+                boolean first = true;
         if (c.Routes.size() > 0) {
-                Route maxRoutebyDist = c.Routes.get(0);
+                Route maxRoutebyDist = null;
                 for (Route r: c.Routes) {
-                        if (r.getDistance()>maxRoutebyDist.getDistance() ) {
+                        if (r.getDistance()!= null & first) {
                                 maxRoutebyDist = r;
+                                first = false;
                         }
+                    if (r.getDistance()!=null) {
+                            if (r.getDistance()>maxRoutebyDist.getDistance() ) maxRoutebyDist = r;
+                    }
                 }
                 System.out.println(maxRoutebyDist);
         } else
         System.out.println("Коллекция пуста как моё сердце");
-}
+   }
 }
