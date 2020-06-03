@@ -15,8 +15,8 @@ public abstract class Reader {
     public void close(){
         try {
             bufferedReader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } catch (IOException e){
+            System.out.println("Не удалось закрыть поток чтения");
+        } catch (NullPointerException ignored) {}
     }
 }
