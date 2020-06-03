@@ -17,7 +17,7 @@ public class FileSourceReader extends Reader {
         try {
             this.bufferedReader = new BufferedReader(new FileReader(new File(path)));
         } catch (FileNotFoundException | NullPointerException e) {
-            System.out.println("Ошибка чтения файла");;
+            System.out.println("Ошибка чтения файла");
         }
     }
 
