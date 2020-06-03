@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 /**
  * Класс - сохранщик
  */
-public class Saver {
+public class XMLSaver {
 
     /**
      * Метод для сохранения коллекции в файл
