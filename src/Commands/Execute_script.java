@@ -66,10 +66,11 @@ public class Execute_script {
             String[] s;
             String line;
             line = fileSourceReader.getLine();
-            while (fileWork && line != null) {
-                s = CommandArgumentSplitter.comArgSplitter(line);
+           s = CommandArgumentSplitter.comArgSplitter(line);
+            while (fileWork && s != null) {
                 fileWork = Commander.switcher(fileSourceReader, c, s[0], s[1]);
                 line = fileSourceReader.getLine();
+                s = CommandArgumentSplitter.comArgSplitter(line);
             }
             fileSourceReader.close();
             usedFiles.clear();
