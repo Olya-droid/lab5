@@ -195,7 +195,8 @@ public class Add {
         System.out.print("\n" + "Давай посмотрим, что у нас там с Distance. (float)  ");
         String s = reader.getLine()+"";
         if (s.equals("")) {
-            System.out.println("Введена пустая строка. Не надо так.");
+            System.out.println("Установлено значение distance = null. Такие вот дела.");
+            Add.hasDist = true;
             return;
         }
         float distance;
