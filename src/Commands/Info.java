@@ -9,6 +9,7 @@ public class Info {
 
     /**
      * Отображение актуальной информации о коллекции
+     * @param c коллекция
      */
     public static void info(Routes.Collection c) {
         System.out.println("Коллекция представляет собой: " + c.Routes.getClass().getName());
